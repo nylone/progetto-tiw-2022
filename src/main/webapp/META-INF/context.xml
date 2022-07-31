@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true" crossContext="false">
+    <Resource name="jdbc/DBConnectionPool" auth="Container" type="javax.sql.DataSource"
+              maxTotal="10" maxIdle="5"
+              username="progetto2022_user" password="progetto2022_pass"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/progetto2022?serverTimezone=UTC&amp;autoReconnect=true"/>
+</Context>

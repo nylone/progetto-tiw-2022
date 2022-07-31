@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-col">
+    <div class="container-col border"
+         th:fragment="redirect-button">
+        <a class="container-child button" href="/"
+           th:with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}"
+           th:href="${redirect}?:'/'">click here to go back</a>
+    </div>
+    <div class="container-col border"
+         th:fragment="error-handler"
+         th:if="${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
+         th:each="error : ${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
+         th:switch="${{error}}">
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}">
+                An unknown error happened while processing your last action.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}">
+                You must fill out all the input fields.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}">
+                Check e-mail and/or password, one or more are wrong.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}">
+                Please log in.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}">
+                You need to log out to perform your last action.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}">
+                You must fill out all the input fields.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}">
+                Please provide a valid e-mail address.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}">
+                E-mail is already in use.
+            </p>
+            <div class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_PASSWORD}}">
+                <p>
+                    The passwords do not match or are not strong enough. <br>
+                    Check that your passwords contain:
+                </p>
+                <ul>
+                    <li>minimum 8 characters</li>
+                    <li>At least one uppercase English letter</li>
+                    <li>At least one lowercase English letter</li>
+                    <li>At least one digit</li>
+                    <li>At least one special character</li>
+                </ul>
+            </div>
+            <div class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_INVALID_PARAMETERS}}">
+                <p>
+                    Warning: meeting creation failed.<br>
+                    You must fill out all the input fields.<br>
+                    Make sure that: </p>
+                <ul>
+                    <li>The provided title is a valid, not empty string</li>
+                    <li>The provided start date is a valid, not empty date</li>
+                    <li>The provided start time is a valid, not empty time of day</li>
+                    <li>The provided duration is a valid, not empty number of minutes</li>
+                    <li>The provided max number of participants is a valid, not empty number of people</li>
+                </ul>
+                <p>
+                    Do keep in mind that it's not possible to create a meeting in the past and that both the duration
+                    and
+                    the
+                    number of participants need to be positive integers.
+                </p>
+            </div>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}">
+                Warning: you must submit the meeting details before inviting users.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_PARTICIPANTS}}">
+                Too many users selected, remove at least
+                <span th:text="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"> test </span>
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_ATTEMPTS}}">
+                Three attempts to create a meeting failed due to too many participants.<br>
+                The meeting entry has been deleted.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}">
+                Please select at least one user to invite.
+            </p>
+            <p class="container-child error" th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}">
+                You are not allowed to invite yourself to the meeting.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

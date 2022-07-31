@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{title}">Page title</title>
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-col">
+    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@LOGOUT}" class="container-col border" method="post">
+        <input class="container-child button" id="logout" type="submit" value="click here to log out">
+    </form>
+    <div class="container-col border">
+        <h3 class="container-child"
+            th:text="#{info.title}">Meeting info</h3>
+        <form class="container-col container-child">
+            <div class="container-row">
+                <label class="split-half" for="title"
+                       th:text="#{info.meeting.title}">Title</label>
+                <input class="split-half" disabled id="title" type="text"
+                       th:value="${session.meeting_creation.getMeetingBean().getTitle()}">
+            </div>
+            <div class="container-row">
+                <label class="split-half" for="date"
+                       th:text="#{info.meeting.date}">Meeting date</label>
+                <input class="split-half" disabled id="date" type="text"
+                       th:value="${{session.meeting_creation.getMeetingBean().getDate()}}">
+            </div>
+            <div class="container-row">
+                <label class="split-half" for="time"
+                       th:text="#{info.meeting.time}">Meeting time</label>
+                <input class="split-half" disabled id="time"
+                       th:value="${{session.meeting_creation.getMeetingBean().getTime()}}" type="text">
+            </div>
+            <div class="container-row">
+                <label class="split-half" for="duration"
+                       th:text="#{info.meeting.duration}">Meeting duration</label>
+                <input class="split-half" disabled type="text"
+                       id="duration" th:value="${{session.meeting_creation.getMeetingBean().getDuration()}}">
+            </div>
+            <div class="container-row">
+                <label class="split-half" for="max_participants"
+                       th:text="#{info.meeting.max_participants}">Max participants</label>
+                <input class="split-half" disabled id="max_participants" type="text"
+                       th:value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}">
+            </div>
+        </form>
+    </div>
+    <div class="container-col border"
+         th:if="not ${#vars.users.isEmpty()}">
+        <h3 class="container-child"
+            th:text="#{users.title}">Users</h3>
+        <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@COMPLETE_MEETING}" class="container-col" method="post">
+            <table class="container-child">
+                <thead>
+                <tr>
+                    <td th:text="#{users.table.invite}">INVITE</td>
+                    <td th:text="#{users.table.email}">E-MAIL</td>
+                </tr>
+                </thead>
+                <tbody th:remove="all-but-first">
+                <tr th:each="user : ${#vars.users}">
+                    <td><input id="checkbox" name="invite" type="checkbox"
+                               th:checked="${session.meeting_creation.getSelected().contains(user.getId())}"
+                               th:id="${user.getId()}"
+                               th:value="${user.getId()}">
+                    </td>
+                    <td><label for="checkbox" style="text-align: start"
+                               th:for="${user.getId()}"
+                               th:text="${user.getEmail()}">E-MAIL</label></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="container-row">
+                <input class="container-child button" id="create" type="submit" value="create">
+            </div>
+        </form>
+    </div>
+    <div class="container-col border" th:replace="~{errors :: error-handler}"></div>
+</div>
+</body>
+</html>
