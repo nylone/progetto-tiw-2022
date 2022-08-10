@@ -1,7 +1,6 @@
 package com.rampeo.tiw.progetto2022.Utils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 import java.util.function.Function;
 
 public class HTTPParameterChecker {
@@ -9,7 +8,7 @@ public class HTTPParameterChecker {
         return checkExists(request, param) && checkUnique(request, param);
     }
 
-    public static boolean checkExists(HttpServletRequest request,  String param) {
+    public static boolean checkExists(HttpServletRequest request, String param) {
         return request.getParameterMap().containsKey(param);
     }
 

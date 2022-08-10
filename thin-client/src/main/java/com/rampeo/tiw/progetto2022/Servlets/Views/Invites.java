@@ -2,9 +2,9 @@ package com.rampeo.tiw.progetto2022.Servlets.Views;
 
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
-import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
+import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import com.rampeo.tiw.progetto2022.Utils.PathBuilder;
 import org.thymeleaf.context.WebContext;
@@ -16,16 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "Invites", urlPatterns = {ViewsURLs.LINK_TO_MEETING_PAGE})
+@WebServlet(name = "Invites", urlPatterns = {URLs.LINK_TO_MEETING_PAGE})
 public class Invites extends ThymeleafHTTPServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // make into a filter
         if (request.getSession().getAttribute(AttributeNames.MEETING_CREATION) == null) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.CREATION_NO_MEETING_PENDING)
-                    .addParam(AttributeNames.REDIRECT, ViewsURLs.HOME_PAGE)
+                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }
@@ -35,9 +35,9 @@ public class Invites extends ThymeleafHTTPServlet {
         try (UserDAO userDAO = new UserDAO()) {
             ctx.setVariable(AttributeNames.INVITED_USERS, userDAO.getOtherUsers(user));
         } catch (SQLException e) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, ViewsURLs.HOME_PAGE)
+                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }

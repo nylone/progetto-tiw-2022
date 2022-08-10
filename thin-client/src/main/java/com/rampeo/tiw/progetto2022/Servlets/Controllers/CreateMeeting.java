@@ -4,9 +4,8 @@ import com.rampeo.tiw.progetto2022.Beans.MeetingBean;
 import com.rampeo.tiw.progetto2022.Beans.MeetingCreationBean;
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
 import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import com.rampeo.tiw.progetto2022.Utils.HTTPParameterChecker;
@@ -23,22 +22,22 @@ import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@WebServlet(name = "CreateMeeting", urlPatterns = {ControllersURLs.CREATE_MEETING})
+@WebServlet(name = "CreateMeeting", urlPatterns = {URLs.CREATE_MEETING})
 public class CreateMeeting extends ThymeleafHTTPServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try (UserDAO userDAO = new UserDAO()) {
             if (userDAO.getUserCount() < 2) {
-                response.sendRedirect(new PathBuilder(ViewsURLs.HOME_PAGE)
+                response.sendRedirect(new PathBuilder(URLs.HOME_PAGE)
                         .addParam(AttributeNames.ERROR, ErrorParameter.CREATION_NO_USERS_TO_INVITE)
                         .toString());
                 return;
             }
         } catch (SQLException e) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, ViewsURLs.HOME_PAGE)
+                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }
@@ -80,12 +79,12 @@ public class CreateMeeting extends ThymeleafHTTPServlet {
                 meetingCreationBean.setFailedAttempts(0);
 
                 request.getSession().setAttribute(AttributeNames.MEETING_CREATION, meetingCreationBean);
-                response.sendRedirect(ViewsURLs.LINK_TO_MEETING_PAGE);
+                response.sendRedirect(URLs.LINK_TO_MEETING_PAGE);
                 return;
             }
         }
 
-        response.sendRedirect(new PathBuilder(ViewsURLs.HOME_PAGE)
+        response.sendRedirect(new PathBuilder(URLs.HOME_PAGE)
                 .addParam(AttributeNames.ERROR, ErrorParameter.CREATION_INVALID_PARAMETERS)
                 .toString());
     }

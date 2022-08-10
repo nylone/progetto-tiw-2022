@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Error</title>
+    <title th:text="#{title}">Error</title>
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -14,124 +14,107 @@
          th:fragment="redirect-button">
         <a class="container-child button" href="/"
            th:href="${redirect}?:'/'"
-           th:with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}">click here to go back</a>
+           th:text="#{go_back_button}"
+           th:with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}">
+            go back</a>
     </div>
 
     <div class="container-col"
-        th:fragment="error-handler"
-        th:if="${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
-        th:with="errors = ${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}">
+         th:fragment="error-handler"
+         th:if="${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
+         th:with="errors = ${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}">
         <div class="container-col border"
              th:each="error : ${errors}"
              th:switch="${error}">
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}">
-                An unknown error happened while processing your last action.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}"
+               th:utext="#{error.unknown}">
+                unknown
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}">
-                You must fill out all the input fields.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}"
+               th:utext="#{error.auth.empty_fields}">
+                empty fields
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}">
-                Check e-mail and/or password, one or more are wrong.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}"
+               th:utext="#{error.auth.failed}">
+                failed auth
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}">
-                Please log in.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}"
+               th:utext="#{error.auth.not_logged_in}">
+                not logged in
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}">
-                You need to log out to perform your last action.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}"
+               th:utext="#{error.auth.already_logged_in}">
+                need to logout
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}">
-                You must fill out all the input fields.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}"
+               th:utext="#{error.auth.invalid_email}">
+                invalid email
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}">
-                Please provide a valid e-mail address.
-            </p>
-
-            <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}">
-                E-mail is already in use.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}"
+               th:utext="#{error.auth.user_exists}">
+                user exists
             </p>
 
             <div class="container-child error"
-                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_PASSWORD}}">
-                <p>
-                    The passwords do not match or are not strong enough. <br>
-                    Check that your passwords contain:
-                </p>
-                <ul>
-                    <li>minimum 8 characters</li>
-                    <li>At least one uppercase English letter</li>
-                    <li>At least one lowercase English letter</li>
-                    <li>At least one digit</li>
-                    <li>At least one special character</li>
-                </ul>
+                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_PASSWORD}}"
+                 th:utext="#{error.auth.invalid_password}">
+                invalid password
             </div>
 
             <div class="container-child error"
-                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_INVALID_PARAMETERS}}">
-                <p>
-                    Warning: meeting creation failed.<br>
-                    You must fill out all the input fields.<br>
-                    Make sure that: </p>
-                <ul>
-                    <li>The provided title is a valid, not empty string</li>
-                    <li>The provided start date is a valid, not empty date</li>
-                    <li>The provided start time is a valid, not empty time of day</li>
-                    <li>The provided duration is a valid, not empty number of minutes</li>
-                    <li>The provided max number of participants is a valid, not empty number of people</li>
-                </ul>
-                <p>
-                    Do keep in mind that it's not possible to create a meeting in the past and that both the duration
-                    and
-                    the
-                    number of participants need to be positive integers.
-                </p>
+                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_INVALID_PARAMETERS}}"
+                 th:utext="#{error.creation.invalid_parameters}">
+                invalid parameters
             </div>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}">
-                Warning: you must submit the meeting details before inviting users.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}"
+               th:utext="#{error.creation.no_meeting_pending}">
+                no meeting pending
             </p>
 
             <p class="container-child error"
                th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_PARTICIPANTS}}">
-                Too many users selected, remove at least
-                <span th:text="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"> test </span>
+                <span th:utext="#{error.creation.max_participants}"></span>
+                <span th:utext="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"></span>
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_ATTEMPTS}}">
-                Three attempts to create a meeting failed due to too many participants.<br>
-                The meeting entry has been deleted.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_ATTEMPTS}}"
+               th:utext="#{error.creation.max_attempts}">
+                max attempts
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}">
-                Please select at least one user to invite.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}"
+               th:utext="#{error.creation.no_participants}">
+                no participants
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_USERS_TO_INVITE}}">
-                There are currently no users to invite to any meetings.<br>
-                Your request has been denied, try again later.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_USERS_TO_INVITE}}"
+               th:utext="#{error.creation.no_users_to_invite}">
+                no users to invite
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}">
-                You are not allowed to invite yourself to the meeting.
+               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}"
+               th:utext="#{error.creation.admin_invited}">
+                admin invited
             </p>
         </div>
 

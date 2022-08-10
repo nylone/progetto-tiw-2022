@@ -2,7 +2,7 @@ package com.rampeo.tiw.progetto2022.Filters;
 
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
 import com.rampeo.tiw.progetto2022.Utils.PathBuilder;
 
 import javax.servlet.*;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthFilter", urlPatterns = {"", "/", "/a/*"})
+@WebFilter(filterName = "AuthFilter", urlPatterns = {URLs.AUTHENTICATED_PATTERN})
 public class AuthFilter implements Filter {
 
     @Override
@@ -22,7 +22,7 @@ public class AuthFilter implements Filter {
         HttpSession session = hrequest.getSession();
 
         if (session.isNew() || session.getAttribute(AttributeNames.USER) == null) {
-            hresponse.sendRedirect(new PathBuilder(ViewsURLs.AUTH_PAGE)
+            hresponse.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_NOT_LOGGED_IN)
                     .toString());
             return;

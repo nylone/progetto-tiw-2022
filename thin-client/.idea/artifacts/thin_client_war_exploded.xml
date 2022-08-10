@@ -1,17 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="progetto2022:war exploded">
-    <output-path>$PROJECT_DIR$/target/progetto-tiw-2022-1.0-SNAPSHOT</output-path>
-    <properties id="maven-jee-properties">
-      <options>
-        <exploded>true</exploded>
-        <module>progetto2022</module>
-        <packaging>war</packaging>
-      </options>
-    </properties>
+  <artifact type="exploded-war" name="thin-client:war exploded">
+    <output-path>$PROJECT_DIR$/target/progetto-tiw-2022-thin-client-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="progetto2022" />
+          <element id="module-output" name="thin-client" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.15.RELEASE" />
@@ -26,10 +19,7 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
         </element>
       </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/progetto-tiw-2022-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
-      </element>
-      <element id="javaee-facet-resources" facet="progetto2022/web/Web" />
+      <element id="javaee-facet-resources" facet="thin-client/web/Web" />
     </root>
   </artifact>
 </component>

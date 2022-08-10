@@ -3,7 +3,7 @@ package com.rampeo.tiw.progetto2022.Servlets.Views;
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
 import com.rampeo.tiw.progetto2022.DAOs.MeetingDAO;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import com.rampeo.tiw.progetto2022.Utils.PathBuilder;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "Home", urlPatterns = {ViewsURLs.HOME_PAGE})
+@WebServlet(name = "Home", urlPatterns = {URLs.HOME_PAGE})
 public class Home extends ThymeleafHTTPServlet {
 
     @Override
@@ -28,9 +28,9 @@ public class Home extends ThymeleafHTTPServlet {
             ctx.setVariable("createdMeetings", meetingDAO.getCreatedMeetings(user));
             ctx.setVariable("invitedMeetings", meetingDAO.getInvitedMeetings(user));
         } catch (SQLException e) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, ViewsURLs.HOME_PAGE)
+                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }

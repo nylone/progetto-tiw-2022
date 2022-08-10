@@ -9,7 +9,8 @@
 </head>
 <body>
 <div class="container-col">
-    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@LOGOUT}" class="container-col border" method="post">
+    <form class="container-col border" method="post"
+          th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}">
         <input class="container-child button" id="logout" type="submit" value="click here to log out">
     </form>
     <div class="container-col border">
@@ -19,14 +20,16 @@
             <div class="container-row">
                 <label class="split-half" for="title"
                        th:text="#{info.meeting.title}">Title</label>
-                <input class="split-half" disabled id="title" type="text"
-                       th:value="${session.meeting_creation.getMeetingBean().getTitle()}">
+                <input class="split-half" disabled id="title"
+                       th:value="${session.meeting_creation.getMeetingBean().getTitle()}"
+                       type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="date"
                        th:text="#{info.meeting.date}">Meeting date</label>
-                <input class="split-half" disabled id="date" type="text"
-                       th:value="${{session.meeting_creation.getMeetingBean().getDate()}}">
+                <input class="split-half" disabled id="date"
+                       th:value="${{session.meeting_creation.getMeetingBean().getDate()}}"
+                       type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="time"
@@ -37,14 +40,15 @@
             <div class="container-row">
                 <label class="split-half" for="duration"
                        th:text="#{info.meeting.duration}">Meeting duration</label>
-                <input class="split-half" disabled type="text"
-                       id="duration" th:value="${{session.meeting_creation.getMeetingBean().getDuration()}}">
+                <input class="split-half" disabled id="duration"
+                       th:value="${{session.meeting_creation.getMeetingBean().getDuration()}}" type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="max_participants"
                        th:text="#{info.meeting.max_participants}">Max participants</label>
-                <input class="split-half" disabled id="max_participants" type="text"
-                       th:value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}">
+                <input class="split-half" disabled id="max_participants"
+                       th:value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}"
+                       type="text">
             </div>
         </form>
     </div>
@@ -52,7 +56,8 @@
          th:if="not ${#vars.users.isEmpty()}">
         <h3 class="container-child"
             th:text="#{users.title}">Users</h3>
-        <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@COMPLETE_MEETING}" class="container-col" method="post">
+        <form class="container-col"
+              method="post" th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@COMPLETE_MEETING}">
             <table class="container-child">
                 <thead>
                 <tr>
@@ -62,10 +67,11 @@
                 </thead>
                 <tbody th:remove="all-but-first">
                 <tr th:each="user : ${#vars.users}">
-                    <td><input id="checkbox" name="invite" type="checkbox"
+                    <td><input id="checkbox" name="invite"
                                th:checked="${session.meeting_creation.getSelected().contains(user.getId())}"
                                th:id="${user.getId()}"
-                               th:value="${user.getId()}">
+                               th:value="${user.getId()}"
+                               type="checkbox">
                     </td>
                     <td><label for="checkbox" style="text-align: start"
                                th:for="${user.getId()}"

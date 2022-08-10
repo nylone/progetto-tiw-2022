@@ -9,8 +9,8 @@
 </head>
 <body>
 <div class="container-col">
-    <form  class="container-col border" method="post"
-            th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@LOGOUT}">
+    <form class="container-col border" method="post"
+          th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}">
         <div class="container-row">
             <input class="container-child button" id="logout" type="submit" value="click here to log out">
         </div>
@@ -21,7 +21,7 @@
              th:if="not ${#vars.createdMeetings.isEmpty()}">
             <div class="container-col">
                 <h3 class="container-child"
-                th:text="#{meetings.created.title}">Meetings you created (not yet expired)</h3>
+                    th:text="#{meetings.created.title}">Meetings you created (not yet expired)</h3>
                 <table class="container-child">
                     <thead>
                     <tr>
@@ -73,12 +73,13 @@
             </div>
         </div>
     </div>
-    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@CREATE_MEETING}" class="container-col border" method="post">
+    <form class="container-col border"
+          method="post" th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@CREATE_MEETING}">
         <h3 class="container-child"
             th:text="#{creation.title}">Meeting creation</h3>
         <div class="container-row">
             <label class="container-child split-half" for="title"
-            th:text="#{creation.meeting.title}">Title</label>
+                   th:text="#{creation.meeting.title}">Title</label>
             <input class="container-child split-half" id="title" name="title" placeholder="insert Title" required
                    type="text">
         </div>

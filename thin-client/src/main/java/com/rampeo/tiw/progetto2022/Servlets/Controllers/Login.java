@@ -2,10 +2,9 @@ package com.rampeo.tiw.progetto2022.Servlets.Controllers;
 
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs;
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
-import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
+import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import com.rampeo.tiw.progetto2022.Utils.PathBuilder;
 
@@ -17,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.sql.SQLException;
 
-@WebServlet(name = "Login", urlPatterns = {ControllersURLs.LOGIN})
+@WebServlet(name = "Login", urlPatterns = {URLs.LOGIN})
 public class Login extends ThymeleafHTTPServlet {
 
     @Override
@@ -26,7 +25,7 @@ public class Login extends ThymeleafHTTPServlet {
         String pwd = request.getParameter("pass");
 
         if (usrn == null || usrn.isEmpty() || pwd == null || pwd.isEmpty()) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_EMPTY_FIELDS).toString());
+            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_EMPTY_FIELDS).toString());
             return;
         }
 
@@ -34,18 +33,18 @@ public class Login extends ThymeleafHTTPServlet {
         try (UserDAO userDAO = new UserDAO()) {
             u = userDAO.checkCredentials(usrn, pwd);
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, ViewsURLs.AUTH_PAGE)
+                    .addParam(AttributeNames.REDIRECT, URLs.AUTH_PAGE)
                     .toString());
             return;
         }
 
         if (u == null) {
-            response.sendRedirect(new PathBuilder(ViewsURLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_FAILED_AUTHENTICATION).toString());
+            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_FAILED_AUTHENTICATION).toString());
         } else {
             request.getSession().setAttribute(AttributeNames.USER, u);
-            response.sendRedirect(ViewsURLs.HOME_PAGE);
+            response.sendRedirect(URLs.HOME_PAGE);
         }
     }
 }

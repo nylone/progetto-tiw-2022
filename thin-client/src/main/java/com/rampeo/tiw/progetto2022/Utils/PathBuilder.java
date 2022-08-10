@@ -6,9 +6,10 @@ public class PathBuilder {
 
     public PathBuilder(String location) {
         pathBuilder = new StringBuilder();
-        pathBuilder.append(location);
+        pathBuilder.append(location.equals("") ? "/" : location);
         noParams = true;
     }
+
     public PathBuilder addParam(String key, Object value) {
         if (noParams) {
             pathBuilder.append("?");

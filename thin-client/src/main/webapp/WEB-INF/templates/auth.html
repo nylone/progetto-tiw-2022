@@ -9,50 +9,53 @@
 </head>
 <body>
 <div class="container-col">
-    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@LOGIN}" class="container-col border" method="post">
+    <form class="container-col border" method="post" th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGIN}">
         <div class="container-row">
             <label class="container-child split-half" for="login-email" th:text="#{login.email.label}">e-mail</label>
             <input class="container-child split-half" id="login-email" name="email" placeholder="mail@example.com"
                    required
-                   type="email"
                    th:placeholder="#{login.email.placeholder}"
+                   type="email"
             >
         </div>
         <div class="container-row">
             <label class="container-child split-half" for="login-pass" th:text="#{login.pass.label}">password</label>
             <input class="container-child split-half" id="login-pass" name="pass" placeholder="password" required
-                   type="password"
                    th:placeholder="#{login.pass.placeholder}"
+                   type="password"
             >
         </div>
         <div class="container-row">
-            <input class="container-child button" type="submit" value="login" th:value="#{login.button}">
+            <input class="container-child button" th:value="#{login.button}" type="submit" value="login">
         </div>
     </form>
-    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@SIGNUP}" class="container-col border" method="post">
+    <form class="container-col border" method="post" th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@SIGNUP}">
         <div class="container-row">
-            <label class="container-child split-half" for="register-email" th:text="#{signup.email.label}">e-mail</label>
+            <label class="container-child split-half" for="register-email"
+                   th:text="#{signup.email.label}">e-mail</label>
             <input class="container-child split-half" id="register-email" name="email" placeholder="ex@mple.com"
                    required
-                   type="email"
-            th:placeholder="#{signup.email.placeholder}">
+                   th:placeholder="#{signup.email.placeholder}"
+                   type="email">
         </div>
         <div class="container-row">
-            <label class="container-child split-half" for="register-pass1" th:text="#{signup.pass1.label}">password</label>
+            <label class="container-child split-half" for="register-pass1"
+                   th:text="#{signup.pass1.label}">password</label>
             <input class="container-child split-half" id="register-pass1" name="pass1" placeholder="password" required
-                   type="password"
                    th:placeholder="#{signup.pass1.placeholder}"
+                   type="password"
             >
         </div>
         <div class="container-row">
-            <label class="container-child split-half" for="register-pass2" th:text="#{signup.pass2.label}">repeat password</label>
+            <label class="container-child split-half" for="register-pass2" th:text="#{signup.pass2.label}">repeat
+                password</label>
             <input class="container-child split-half" id="register-pass2" name="pass2" placeholder="repeat password"
                    required
-                   type="password"
-                   th:placeholder="#{signup.pass2.placeholder}">
+                   th:placeholder="#{signup.pass2.placeholder}"
+                   type="password">
         </div>
         <div class="container-row">
-            <input class="container-child button" type="submit" value="sign up" th:value="#{signup.button}">
+            <input class="container-child button" th:value="#{signup.button}" type="submit" value="sign up">
         </div>
     </form>
     <div class="container-col border" th:replace="~{errors :: error-handler}"></div>

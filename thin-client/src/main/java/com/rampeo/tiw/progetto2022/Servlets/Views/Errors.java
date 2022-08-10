@@ -1,6 +1,6 @@
 package com.rampeo.tiw.progetto2022.Servlets.Views;
 
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import org.thymeleaf.context.WebContext;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Errors", urlPatterns = {ViewsURLs.ERROR_PAGE})
+@WebServlet(name = "Errors", urlPatterns = {URLs.ERROR_PAGE})
 public class Errors extends ThymeleafHTTPServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

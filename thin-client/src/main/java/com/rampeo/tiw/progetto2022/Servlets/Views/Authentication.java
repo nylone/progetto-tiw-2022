@@ -1,6 +1,6 @@
 package com.rampeo.tiw.progetto2022.Servlets.Views;
 
-import com.rampeo.tiw.progetto2022.Constants.URLs.ViewsURLs;
+import com.rampeo.tiw.progetto2022.Constants.URLs;
 import com.rampeo.tiw.progetto2022.Servlets.ThymeleafHTTPServlet;
 import org.thymeleaf.context.WebContext;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Authentication", urlPatterns = {ViewsURLs.AUTH_PAGE})
+@WebServlet(name = "Authentication", urlPatterns = {URLs.AUTH_PAGE})
 public class Authentication extends ThymeleafHTTPServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
