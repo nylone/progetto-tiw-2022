@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{title}">Home</title>
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-col">
+    <form  class="container-col border" method="post"
+            th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@LOGOUT}">
+        <div class="container-row">
+            <input class="container-child button" id="logout" type="submit" value="click here to log out">
+        </div>
+    </form>
+    <div class="container-row border"
+         th:if="not ${createdMeetings.isEmpty()} or not ${invitedMeetings.isEmpty()}">
+        <div class="split-half"
+             th:if="not ${#vars.createdMeetings.isEmpty()}">
+            <div class="container-col">
+                <h3 class="container-child"
+                th:text="#{meetings.created.title}">Meetings you created (not yet expired)</h3>
+                <table class="container-child">
+                    <thead>
+                    <tr>
+                        <td th:text="#{meetings.table.title}">TITLE</td>
+                        <td th:text="#{meetings.table.date}">DATE</td>
+                        <td th:text="#{meetings.table.time}">TIME</td>
+                        <td th:text="#{meetings.table.duration}">DURATION</td>
+                        <td th:text="#{meetings.table.max_participants}">MAX PARTICIPANTS</td>
+                    </tr>
+                    </thead>
+                    <tbody th:remove="all-but-first">
+                    <tr th:each="meeting : ${createdMeetings}">
+                        <td th:text="${{meeting.title}}">TITLE</td>
+                        <td th:text="${{meeting.date}}">DATE</td>
+                        <td th:text="${{meeting.time}}">TIME</td>
+                        <td th:text="${{meeting.duration}}">DURATION</td>
+                        <td th:text="${{meeting.maxParticipants}}">MAX PARTICIPANTS</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="split-half" th:if="not ${#vars.invitedMeetings.isEmpty()}">
+            <div class="container-col">
+                <h3 class="container-child"
+                    th:text="#{meetings.invited.title}">Meetings you were invited to (not yet expired)</h3>
+                <table class="container-child">
+                    <thead>
+                    <tr>
+                        <td th:text="#{meetings.table.admin}">ADMIN</td>
+                        <td th:text="#{meetings.table.title}">TITLE</td>
+                        <td th:text="#{meetings.table.date}">DATE</td>
+                        <td th:text="#{meetings.table.time}">TIME</td>
+                        <td th:text="#{meetings.table.duration}">DURATION</td>
+                        <td th:text="#{meetings.table.max_participants}">MAX PARTICIPANTS</td>
+                    </tr>
+                    </thead>
+                    <tbody th:remove="all-but-first">
+                    <tr th:each="meeting : ${invitedMeetings}">
+                        <td th:text="${{meeting.admin.getEmail()}}">ADMIN</td>
+                        <td th:text="${{meeting.title}}">TITLE</td>
+                        <td th:text="${{meeting.date}}">DATE</td>
+                        <td th:text="${{meeting.time}}">TIME</td>
+                        <td th:text="${{meeting.duration}}">DURATION</td>
+                        <td th:text="${{meeting.maxParticipants}}">MAX PARTICIPANTS</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <form th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs.ControllersURLs@CREATE_MEETING}" class="container-col border" method="post">
+        <h3 class="container-child"
+            th:text="#{creation.title}">Meeting creation</h3>
+        <div class="container-row">
+            <label class="container-child split-half" for="title"
+            th:text="#{creation.meeting.title}">Title</label>
+            <input class="container-child split-half" id="title" name="title" placeholder="insert Title" required
+                   type="text">
+        </div>
+        <div class="container-row">
+            <label class="container-child split-half" for="start"
+                   th:text="#{creation.meeting.start}">Meeting start date and time (GMT)</label>
+            <input class="container-child split-half" id="start" name="start" required type="datetime-local">
+        </div>
+        <div class="container-row">
+            <label class="container-child split-half" for="duration"
+                   th:text="#{creation.meeting.duration}">Meeting continues for (in minutes)</label>
+            <input class="container-child split-half" id="duration" name="duration" placeholder="insert MINUTES"
+                   required
+                   type="number">
+        </div>
+        <div class="container-row">
+            <label class="container-child split-half" for="max_participants"
+                   th:text="#{creation.meeting.max_participants}">Max number of participants</label>
+            <input class="container-child split-half" id="max_participants" name="max_participants"
+                   placeholder="insert NUMBER"
+                   required type="number">
+        </div>
+        <div class="container-row">
+            <input class="container-child button" id="create" type="submit" value="create">
+        </div>
+    </form>
+    <div class="container-col border" th:replace="~{errors :: error-handler}"></div>
+</div>
+</body>
+</html>
