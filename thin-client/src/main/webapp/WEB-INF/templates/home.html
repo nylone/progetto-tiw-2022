@@ -9,7 +9,8 @@
     <form class="container-col border" method="post"
           data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}">
         <div class="container-row">
-            <input class="container-child button" id="logout" type="submit" value="click here to log out">
+            <input class="container-child button" id="logout" type="submit" value="log out"
+            data-th-value="#{logout.button}">
         </div>
     </form>
     <div class="container-row border"
@@ -77,7 +78,8 @@
         <div class="container-row">
             <label class="container-child split-half" for="title"
                    data-th-text="#{creation.meeting.title}">Title</label>
-            <input class="container-child split-half" id="title" name="title" placeholder="insert Title" required
+            <input class="container-child split-half" id="title" name="title" required
+                   data-th-placeholder="#{creation.meeting.title.placeholder}"
                    type="text">
         </div>
         <div class="container-row">
@@ -88,19 +90,19 @@
         <div class="container-row">
             <label class="container-child split-half" for="duration"
                    data-th-text="#{creation.meeting.duration}">Meeting continues for (in minutes)</label>
-            <input class="container-child split-half" id="duration" name="duration" placeholder="insert MINUTES"
-                   required
+            <input class="container-child split-half" id="duration" name="duration" required
+                   data-th-placeholder="#{creation.meeting.duration.placeholder}"
                    type="number">
         </div>
         <div class="container-row">
             <label class="container-child split-half" for="max_participants"
                    data-th-text="#{creation.meeting.max_participants}">Max number of participants</label>
             <input class="container-child split-half" id="max_participants" name="max_participants"
-                   placeholder="insert NUMBER"
+                   data-th-placeholder="#{creation.meeting.max_participants.placeholder}"
                    required type="number">
         </div>
         <div class="container-row">
-            <input class="container-child button" id="create" type="submit" value="create">
+            <input class="container-child button" id="create" type="submit" value="create" data-th-value="#{creation.button}">
         </div>
     </form>
     <div class="container-col border" data-th-replace="~{errors :: error-handler}"></div>
