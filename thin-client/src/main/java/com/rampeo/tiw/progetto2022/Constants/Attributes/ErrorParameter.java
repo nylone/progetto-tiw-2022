@@ -2,6 +2,7 @@ package com.rampeo.tiw.progetto2022.Constants.Attributes;
 
 public enum ErrorParameter {
     UNKNOWN,
+    UNREACHABLE,
     AUTH_EMPTY_FIELDS,
     AUTH_INVALID_EMAIL,
     AUTH_INVALID_PASSWORD,
