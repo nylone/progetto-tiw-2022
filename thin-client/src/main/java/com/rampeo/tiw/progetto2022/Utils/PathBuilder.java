@@ -6,7 +6,7 @@ public class PathBuilder {
 
     public PathBuilder(String location) {
         pathBuilder = new StringBuilder();
-        pathBuilder.append(location.equals("") ? "/" : location);
+        pathBuilder.append(location);
         noParams = true;
     }
 

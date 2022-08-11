@@ -12,6 +12,6 @@ public class URLs {
     public static final String LOGIN = "/login";
     public static final String SIGNUP = "/signup";
     // VIEW URLS
-    public static final String AUTH_PAGE = "";
+    public static final String AUTH_PAGE = "/auth";
     public static final String ERROR_PAGE = "/error";
 }

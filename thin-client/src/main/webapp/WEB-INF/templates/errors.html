@@ -26,43 +26,43 @@
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}"
-               data-th-text="#{error.unknown}">
+               data-th-utext="#{error.unknown}">
                 unknown
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}"
-               data-th-text="#{error.auth.empty_fields}">
+               data-th-utext="#{error.auth.empty_fields}">
                 empty fields
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}"
-               data-th-text="#{error.auth.failed}">
+               data-th-utext="#{error.auth.failed}">
                 failed auth
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}"
-               data-th-text="#{error.auth.not_logged_in}">
+               data-th-utext="#{error.auth.not_logged_in}">
                 not logged in
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}"
-               data-th-text="#{error.auth.already_logged_in}">
+               data-th-utext="#{error.auth.already_logged_in}">
                 need to logout
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}"
-               data-th-text="#{error.auth.invalid_email}">
+               data-th-utext="#{error.auth.invalid_email}">
                 invalid email
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}"
-               data-th-text="#{error.auth.user_exists}">
+               data-th-utext="#{error.auth.user_exists}">
                 user exists
             </p>
 
@@ -80,14 +80,14 @@
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}"
-               data-th-text="#{error.creation.no_meeting_pending}">
+               data-th-utext="#{error.creation.no_meeting_pending}">
                 no meeting pending
             </p>
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_PARTICIPANTS}}">
-                <span data-th-text="#{error.creation.max_participants}"></span>
-                <span data-th-text="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"></span>
+                <span data-th-utext="#{error.creation.max_participants}"></span>
+                <span data-th-utext="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"></span>
             </p>
 
             <p class="container-child error"
@@ -98,7 +98,7 @@
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}"
-               data-th-text="#{error.creation.no_participants}">
+               data-th-utext="#{error.creation.no_participants}">
                 no participants
             </p>
 
@@ -110,7 +110,7 @@
 
             <p class="container-child error"
                data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}"
-               data-th-text="#{error.creation.admin_invited}">
+               data-th-utext="#{error.creation.admin_invited}">
                 admin invited
             </p>
         </div>

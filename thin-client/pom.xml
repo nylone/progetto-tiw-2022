@@ -24,14 +24,15 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf</artifactId>
-            <version>3.0.15.RELEASE</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>9.0.65</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf-spring6</artifactId>
-            <version>3.1.0.M1</version>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.15.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
