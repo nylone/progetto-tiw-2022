@@ -1,81 +1,78 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title th:text="#{title}">Page title</title>
+    <title data-th-text="#{title}">Page title</title>
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container-col">
     <form class="container-col border" method="post"
-          th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}">
+          data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}">
         <input class="container-child button" id="logout" type="submit" value="click here to log out">
     </form>
     <div class="container-col border">
         <h3 class="container-child"
-            th:text="#{info.title}">Meeting info</h3>
+            data-th-text="#{info.title}">Meeting info</h3>
         <form class="container-col container-child">
             <div class="container-row">
                 <label class="split-half" for="title"
-                       th:text="#{info.meeting.title}">Title</label>
+                       data-th-text="#{info.meeting.title}">Title</label>
                 <input class="split-half" disabled id="title"
-                       th:value="${session.meeting_creation.getMeetingBean().getTitle()}"
+                       data-th-value="${session.meeting_creation.getMeetingBean().getTitle()}"
                        type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="date"
-                       th:text="#{info.meeting.date}">Meeting date</label>
+                       data-th-text="#{info.meeting.date}">Meeting date</label>
                 <input class="split-half" disabled id="date"
-                       th:value="${{session.meeting_creation.getMeetingBean().getDate()}}"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getDate()}}"
                        type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="time"
-                       th:text="#{info.meeting.time}">Meeting time</label>
+                       data-th-text="#{info.meeting.time}">Meeting time</label>
                 <input class="split-half" disabled id="time"
-                       th:value="${{session.meeting_creation.getMeetingBean().getTime()}}" type="text">
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getTime()}}" type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="duration"
-                       th:text="#{info.meeting.duration}">Meeting duration</label>
+                       data-th-text="#{info.meeting.duration}">Meeting duration</label>
                 <input class="split-half" disabled id="duration"
-                       th:value="${{session.meeting_creation.getMeetingBean().getDuration()}}" type="text">
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getDuration()}}" type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" for="max_participants"
-                       th:text="#{info.meeting.max_participants}">Max participants</label>
+                       data-th-text="#{info.meeting.max_participants}">Max participants</label>
                 <input class="split-half" disabled id="max_participants"
-                       th:value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}"
                        type="text">
             </div>
         </form>
     </div>
     <div class="container-col border"
-         th:if="not ${#vars.users.isEmpty()}">
+         data-th-if="not ${#vars.users.isEmpty()}">
         <h3 class="container-child"
-            th:text="#{users.title}">Users</h3>
+            data-th-text="#{users.title}">Users</h3>
         <form class="container-col"
-              method="post" th:action="${@com.rampeo.tiw.progetto2022.Constants.URLs@COMPLETE_MEETING}">
+              method="post" data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@COMPLETE_MEETING}">
             <table class="container-child">
                 <thead>
                 <tr>
-                    <td th:text="#{users.table.invite}">INVITE</td>
-                    <td th:text="#{users.table.email}">E-MAIL</td>
+                    <td data-th-text="#{users.table.invite}">INVITE</td>
+                    <td data-th-text="#{users.table.email}">E-MAIL</td>
                 </tr>
                 </thead>
-                <tbody th:remove="all-but-first">
-                <tr th:each="user : ${#vars.users}">
+                <tbody data-th-remove="all-but-first">
+                <tr data-th-each="user : ${#vars.users}">
                     <td><input id="checkbox" name="invite"
-                               th:checked="${session.meeting_creation.getSelected().contains(user.getId())}"
-                               th:id="${user.getId()}"
-                               th:value="${user.getId()}"
+                               data-th-checked="${session.meeting_creation.getSelected().contains(user.getId())}"
+                               data-th-id="${user.getId()}"
+                               data-th-value="${user.getId()}"
                                type="checkbox">
                     </td>
                     <td><label for="checkbox" style="text-align: start"
-                               th:for="${user.getId()}"
-                               th:text="${user.getEmail()}">E-MAIL</label></td>
+                               data-th-for="${user.getId()}"
+                               data-th-text="${user.getEmail()}">E-MAIL</label></td>
                 </tr>
                 </tbody>
             </table>
@@ -84,7 +81,7 @@
             </div>
         </form>
     </div>
-    <div class="container-col border" th:replace="~{errors :: error-handler}"></div>
+    <div class="container-col border" data-th-replace="~{errors :: error-handler}"></div>
 </div>
 </body>
 </html>

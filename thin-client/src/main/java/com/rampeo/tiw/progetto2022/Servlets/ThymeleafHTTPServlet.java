@@ -1,6 +1,8 @@
 package com.rampeo.tiw.progetto2022.Servlets;
 
+import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.servlet.ServletContext;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 public abstract class ThymeleafHTTPServlet extends HttpServlet {
     private TemplateEngine templateEngine = null;
 
-    public TemplateEngine getTemplateEngine() {
+    public ITemplateEngine getTemplateEngine() {
         return templateEngine;
     }
 
@@ -20,10 +22,10 @@ public abstract class ThymeleafHTTPServlet extends HttpServlet {
 
         ServletContext servletContext = getServletContext();
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
-        templateResolver.setTemplateMode("XHTML");
-        this.templateEngine = new TemplateEngine();
-        this.templateEngine.setTemplateResolver(templateResolver);
+        templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setSuffix(".html");
         templateResolver.setPrefix("/WEB-INF/templates/");
+        this.templateEngine = new TemplateEngine();
+        this.templateEngine.setTemplateResolver(templateResolver);
     }
 }

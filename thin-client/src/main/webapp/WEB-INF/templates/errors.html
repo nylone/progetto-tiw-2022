@@ -1,119 +1,116 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title th:text="#{title}">Error</title>
+    <title data-th-text="#{title}">Error</title>
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container-col">
 
     <div class="container-col border"
-         th:fragment="redirect-button">
+         data-th-fragment="redirect-button">
         <a class="container-child button" href="/"
-           th:href="${redirect}?:'/'"
-           th:text="#{go_back_button}"
-           th:with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}">
+           data-th-href="${redirect}?:'/'"
+           data-th-text="#{go_back_button}"
+           data-th-with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}">
             go back</a>
     </div>
 
     <div class="container-col"
-         th:fragment="error-handler"
-         th:if="${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
-         th:with="errors = ${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}">
+         data-th-fragment="error-handler"
+         data-th-if="${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}"
+         data-th-with="errors = ${#httpServletRequest.getParameterValues(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@ERROR)}">
         <div class="container-col border"
-             th:each="error : ${errors}"
-             th:switch="${error}">
+             data-th-each="error : ${errors}"
+             data-th-switch="${error}">
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}"
-               th:utext="#{error.unknown}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@UNKNOWN}}"
+               data-th-text="#{error.unknown}">
                 unknown
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}"
-               th:utext="#{error.auth.empty_fields}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_EMPTY_FIELDS}}"
+               data-th-text="#{error.auth.empty_fields}">
                 empty fields
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}"
-               th:utext="#{error.auth.failed}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_FAILED_AUTHENTICATION}}"
+               data-th-text="#{error.auth.failed}">
                 failed auth
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}"
-               th:utext="#{error.auth.not_logged_in}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_NOT_LOGGED_IN}}"
+               data-th-text="#{error.auth.not_logged_in}">
                 not logged in
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}"
-               th:utext="#{error.auth.already_logged_in}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_ALREADY_LOGGED_IN}}"
+               data-th-text="#{error.auth.already_logged_in}">
                 need to logout
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}"
-               th:utext="#{error.auth.invalid_email}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_EMAIL}}"
+               data-th-text="#{error.auth.invalid_email}">
                 invalid email
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}"
-               th:utext="#{error.auth.user_exists}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_USER_EXISTS}}"
+               data-th-text="#{error.auth.user_exists}">
                 user exists
             </p>
 
             <div class="container-child error"
-                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_PASSWORD}}"
-                 th:utext="#{error.auth.invalid_password}">
+                 data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@AUTH_INVALID_PASSWORD}}"
+                 data-th-utext="#{error.auth.invalid_password}">
                 invalid password
             </div>
 
             <div class="container-child error"
-                 th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_INVALID_PARAMETERS}}"
-                 th:utext="#{error.creation.invalid_parameters}">
+                 data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_INVALID_PARAMETERS}}"
+                 data-th-utext="#{error.creation.invalid_parameters}">
                 invalid parameters
             </div>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}"
-               th:utext="#{error.creation.no_meeting_pending}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_MEETING_PENDING}}"
+               data-th-text="#{error.creation.no_meeting_pending}">
                 no meeting pending
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_PARTICIPANTS}}">
-                <span th:utext="#{error.creation.max_participants}"></span>
-                <span th:utext="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"></span>
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_PARTICIPANTS}}">
+                <span data-th-text="#{error.creation.max_participants}"></span>
+                <span data-th-text="${session.meeting_creation.getSelected().size() - session.meeting_creation.getMeetingBean().getMaxParticipants()}"></span>
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_ATTEMPTS}}"
-               th:utext="#{error.creation.max_attempts}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_MAX_ATTEMPTS}}"
+               data-th-utext="#{error.creation.max_attempts}">
                 max attempts
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}"
-               th:utext="#{error.creation.no_participants}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_PARTICIPANTS}}"
+               data-th-text="#{error.creation.no_participants}">
                 no participants
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_USERS_TO_INVITE}}"
-               th:utext="#{error.creation.no_users_to_invite}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_NO_USERS_TO_INVITE}}"
+               data-th-utext="#{error.creation.no_users_to_invite}">
                 no users to invite
             </p>
 
             <p class="container-child error"
-               th:case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}"
-               th:utext="#{error.creation.admin_invited}">
+               data-th-case="${{@com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter@CREATION_ADMIN_INVITED}}"
+               data-th-text="#{error.creation.admin_invited}">
                 admin invited
             </p>
         </div>
