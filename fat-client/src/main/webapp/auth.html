@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/auth.js" defer></script>
+</head>
+<body class="col text-center">
+<div class="box special">
+    <h1>MEETINGS</h1>
+</div>
+<div class="row">
+    <div class="col box">
+        <h3>Sign in</h3>
+        <p id="failed-sing-in" class="box special hidden">Failed to sign in, please try again.</p>
+        <form action="#" id="sign-in-form">
+            <input name="email" required type="email" placeholder="e-mail"><br>
+            <input name="pass" required type="password" placeholder="password"><br>
+            <input type="submit" value="SIGN IN">
+        </form>
+    </div>
+
+    <div class="col box">
+        <h3>Sign up</h3>
+        <p id="failed-sing-up" class="box special hidden">Failed to sign in, please try again.</p>
+        <form action="#" id="sign-up-form">
+            <input name="email" required type="email" placeholder="e-mail"><br>
+            <input name="pass" required type="password" placeholder="password"><br>
+            <input name="pass-confirm" required type="password" placeholder="confirm password"><br>
+            <input type="submit" value="SIGN UP">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.rampeo.tiw.progetto2022.Filters;
+package com.rampeo.tiw.progetto2022.Servlets.Filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;

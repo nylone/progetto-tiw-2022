@@ -1,4 +1,4 @@
-package com.rampeo.tiw.progetto2022.Filters;
+package com.rampeo.tiw.progetto2022.Servlets.Filters;
 
 import com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames;
 import com.rampeo.tiw.progetto2022.Constants.Attributes.ErrorParameter;
@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
 
-@WebFilter(filterName = "AuthFilter", urlPatterns = {URLs.AUTHENTICATED_PATTERN})
-public class AuthFilter implements Filter {
+@WebFilter(filterName = "UnAuthFilter", urlPatterns = {URLs.AUTH_PAGE, URLs.LOGIN, URLs.SIGNUP})
+public class UnAuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
@@ -22,9 +21,10 @@ public class AuthFilter implements Filter {
         HttpServletResponse hresponse = (HttpServletResponse) response;
         HttpSession session = hrequest.getSession();
 
-        if (session.isNew() || session.getAttribute(AttributeNames.USER) == null) {
-            hresponse.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
-                    .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_NOT_LOGGED_IN)
+        if (session.getAttribute(AttributeNames.USER) != null) {
+            hresponse.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
+                    .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_ALREADY_LOGGED_IN)
+                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }
