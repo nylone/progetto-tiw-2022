@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "Register", urlPatterns = {Constants.REGISTER_ENDPOINT})
 @MultipartConfig
-public class Register extends HttpServlet {
+public class DoRegister extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -27,7 +27,7 @@ public class Register extends HttpServlet {
         if (email == null || email.isEmpty() || pass == null || pass.isEmpty() ||
                 !InputStringChecker.checkEmail(email) ||
                 !InputStringChecker.checkPass(pass)) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
@@ -35,14 +35,14 @@ public class Register extends HttpServlet {
             UserBean u;
             if (userDAO.checkUnique(email)) {
                 userDAO.addCredentials(email, pass);
-                u = userDAO.checkCredentials(email, pass);
+                u = userDAO.authenticate(email, pass);
                 request.getSession().setAttribute(Constants.USER, u);
                 response.setStatus(HttpServletResponse.SC_OK);
             } else {
-                response.sendError(HttpServletResponse.SC_CONFLICT);
+                response.setStatus(HttpServletResponse.SC_CONFLICT);
             }
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
     }

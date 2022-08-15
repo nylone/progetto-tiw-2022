@@ -2,15 +2,32 @@
 
 * {
     font-family: sans-serif;
+    transition: ease-in-out 250ms;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p {
     padding: 5px;
     margin: 5px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+    padding: 10px;
+    margin: 15px;
+    font-family: sans-serif;
+    text-align: center;
+    color: var(--special-text-color);
+    border-color: var(--special-bg-color);
+    background-color: var(--special-bg-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    --shadow-placement: 2px 2px 0 0;
+    box-shadow: var(--shadow-placement) rgba(var(--shadow-color-rgb), 0.5);
+}
+
+.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
+    box-shadow: none;
 }
 
 body {
@@ -32,6 +49,7 @@ body {
 
 .hidden {
     visibility: collapse;
+    display: none;
 }
 
 input, .button {
@@ -39,7 +57,6 @@ input, .button {
 }
 
 input, .box, .button {
-    color: var(--text-color);
     background-color: var(--bg-color);
     border-color: var(--border-color);
     border-width: 1px;
@@ -50,19 +67,30 @@ input, .box, .button {
 }
 
 input.special, .box.special, .button.special {
-    font-family: "Print Dashed", sans-serif;
+    font-family: sans-serif;
     color: var(--special-text-color);
     border-color: var(--special-bg-color);
     background-color: var(--special-bg-color);
 }
 
+.button.special:hover {
+    color: var(--text-soft-color);
+    border-color: var(--border-color);
+    background-color: var(--mark-color);
+}
+
 .box {
-    padding: 7px;
-    margin: 10px;
+    color: var(--text-color);
+    padding: 20px;
+    margin: 15px;
+}
+
+.box:hover  {
+    transform: scale(1.05);
+    --shadow-placement: 7px 7px 0 0;
 }
 
 input, .button {
-    transition: linear 250ms;
     --shadow-placement: 2px 2px 0 0;
     padding: 5px;
     margin: 5px;
@@ -70,7 +98,7 @@ input, .button {
 }
 
 input:focus, input:hover, .button:focus, .button:hover {
-    --bg-color: var(--mark-color);
+    background-color: var(--mark-color);
     border: 1px solid var(--outline-color);
 }
 
@@ -93,4 +121,92 @@ input:focus, input:hover, .button:focus, .button:hover {
 
 .text-center {
     text-align: center;
+}
+
+thead {
+    color: var(--special-text-color);
+    background-color: var(--special-bg-color);
+}
+
+table {
+    border: 1px solid var(--border-color);
+}
+
+table {
+    border-radius: 5px;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+    --shadow-placement: 2px 2px 0 0;
+    box-shadow: var(--shadow-placement) rgba(var(--shadow-color-rgb), 0.5);
+}
+
+th, td {
+    padding: 5px 7px;
+}
+
+tr {
+    background-color: var(--mark-color);
+}
+
+tr:nth-child(2n+1){
+    background-color: var(--special-mark-color);
+}
+
+tr:hover{
+    background-color: rgba(var(--special-bg-color-rgb), 0.5);
+}
+
+.spread {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.half {
+    width: 45%;
+}
+
+label {
+    text-align: center;
+}
+
+.highlighted {
+    color: var(--special-bg-color);
+}
+
+td, label, input {
+    color: var(--text-soft-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--dark-color-rgb), 0.5);
+}
+
+/* The Close Button */
+.close {
+    color: var(--special-text-color);
+    background-color: var(--special-bg-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
 }

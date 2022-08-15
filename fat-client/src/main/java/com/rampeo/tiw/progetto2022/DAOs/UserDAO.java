@@ -69,7 +69,7 @@ public class UserDAO extends AbstractDAO {
         }
     }
 
-    public UserBean checkCredentials(String email, String pass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public UserBean authenticate(String email, String pass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
         byte[] salt;
         String query = "SELECT salt FROM user  WHERE email=?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {

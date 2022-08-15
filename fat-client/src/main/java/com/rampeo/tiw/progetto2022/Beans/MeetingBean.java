@@ -9,7 +9,7 @@ public class MeetingBean {
     private Date date = null;
     private Time time = null;
     private Integer duration = null;
-    private Integer maxParticipants = null;
+    private Integer capacity = null;
     private UserBean admin = null;
 
     public Time getTime() {
@@ -53,12 +53,12 @@ public class MeetingBean {
         this.duration = duration;
     }
 
-    public Integer getMaxParticipants() {
-        return maxParticipants;
+    public Integer getCapacity() {
+        return capacity;
     }
 
-    public void setMaxParticipants(int maxParticipants) {
-        this.maxParticipants = maxParticipants;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public UserBean getAdmin() {

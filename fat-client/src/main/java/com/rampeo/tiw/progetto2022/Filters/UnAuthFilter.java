@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "UnAuthFilter", urlPatterns = {Constants.AUTH_PAGE, Constants.LOGIN_ENDPOINT, Constants.REGISTER_ENDPOINT})
+@WebFilter(filterName = "UnAuthFilter", urlPatterns = {
+        Constants.AUTH_PAGE,
+        Constants.LOGIN_ENDPOINT,
+        Constants.REGISTER_ENDPOINT,
+})
 public class UnAuthFilter implements Filter {
 
     @Override

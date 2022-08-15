@@ -5,30 +5,83 @@
     <title>Home</title>
 
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/dataloader.js"></script>
+    <script defer src="js/modal.js"></script>
 </head>
 <body class="col">
-<div class="box special text-center">
-    <h1>MEETINGS</h1>
-</div>
-<div class="col text-center">
-    <div class="box">
-        <h3>Sign in</h3>
-        <form action="#">
-            <input name="username" required type="text" placeholder="Username"><br>
-            <input name="pwd" required type="password" placeholder="Password"><br>
-            <input id="signinbutton" type="button" value="SIGN IN">
-        </form>
+    <h1 class="box special text-center">MEETINGS</h1>
+    <div class="col box hidden">
+        <h3 style="margin-top: 0">MEETINGS YOU CREATED</h3>
+        <table class="text-center" id="created-meetings-table">
+            <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>DURATION</th>
+                <th>CAPACITY</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="col box hidden">
+        <h3>MEETINGS YOU HAVE BEEN INVITED TO</h3>
+        <table class="text-center" id="invited-meetings-table">
+            <thead>
+            <tr>
+                <th>ADMIN</th>
+                <th>TITLE</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>DURATION</th>
+                <th>CAPACITY</th>
+            </tr>
+            </thead>
+        </table>
     </div>
 
-    <div class="box">
-        <h3>Sign up</h3>
-        <form action="#">
-            <input name="username" required type="text" placeholder="Username"><br>
-            <input name="pwd" required type="password" placeholder="Password"><br>
-            <input name="rep-pwd" required type="password" placeholder="Repeat password"><br>
-            <input id="signupbutton" type="button" value="SIGN UP">
-        </form>
+    <h2 class="box special text-center">CREATE MEETING</h2>
+    <div id="modal" class="modal">
+        <div class="col">
+            <div class="box">
+                <span id="modal-close" class="button close">&times;</span>
+                <div class="col box text-center">
+                    <p id="failed-creation" class="box special hidden">Failed to create a meeting.<br>
+                        Here's more info:<br>
+                    </p>
+                    <form class="row" action="#" id="create-meeting-form">
+                        <div class="col">
+                            <div class="spread">
+                                <label class="half" for="form-title">Title</label>
+                                <input class="half" id="form-title" name="title" required type="text" placeholder="title">
+                            </div>
+
+                            <div class="spread">
+                                <label class="half" for="form-date">Start date</label>
+                                <input class="half" id="form-date" name="date" required type="text" placeholder="start date">
+                            </div>
+
+                            <div class="spread">
+                                <label class="half" for="form-time">Start time</label>
+                                <input class="half" id="form-time" name="time" required type="text" placeholder="start time">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="spread">
+                                <label class="half" for="form-duration">Duration</label>
+                                <input class="half" id="form-duration" name="duration" required type="number" placeholder="duration">
+                            </div>
+
+                            <div class="spread">
+                                <label class="half" for="form-capacity">Capacity</label>
+                                <input class="half" id="form-capacity" name="max_participants" required type="number" placeholder="capacity">
+                            </div>
+                            <input id="modal-open" class="half button" type="button" value="CREATE MEETING">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class MeetingDAO extends AbstractDAO {
                         meetingBean.setDate(result.getDate("date"));
                         meetingBean.setTime(result.getTime("time"));
                         meetingBean.setDuration(result.getInt("duration"));
-                        meetingBean.setMaxParticipants(result.getInt("max_participants"));
+                        meetingBean.setCapacity(result.getInt("max_participants"));
                         meetingBeanList.add(meetingBean);
                     }
                     return List.copyOf(meetingBeanList);
@@ -71,7 +71,7 @@ public class MeetingDAO extends AbstractDAO {
                         meetingBean.setDate(result.getDate("date"));
                         meetingBean.setTime(result.getTime("time"));
                         meetingBean.setDuration(result.getInt("duration"));
-                        meetingBean.setMaxParticipants(result.getInt("max_participants"));
+                        meetingBean.setCapacity(result.getInt("max_participants"));
                         meetingBeanList.add(meetingBean);
                     }
                     return List.copyOf(meetingBeanList);
@@ -94,7 +94,7 @@ public class MeetingDAO extends AbstractDAO {
                 statement.setDate(2, meeting.getDate());
                 statement.setTime(3, meeting.getTime());
                 statement.setInt(4, meeting.getDuration());
-                statement.setInt(5, meeting.getMaxParticipants());
+                statement.setInt(5, meeting.getCapacity());
                 statement.setLong(6, meeting.getAdmin().getId());
                 statement.execute();
             }

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "Login", urlPatterns = {Constants.LOGIN_ENDPOINT})
 @MultipartConfig
-public class Login extends HttpServlet {
+public class DoLogin extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -24,20 +24,20 @@ public class Login extends HttpServlet {
         String pwd = request.getParameter("pass");
 
         if (usrn == null || usrn.isEmpty() || pwd == null || pwd.isEmpty()) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
         UserBean u;
         try (UserDAO userDAO = new UserDAO()) {
-            u = userDAO.checkCredentials(usrn, pwd);
+            u = userDAO.authenticate(usrn, pwd);
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
 
         if (u == null) {
-            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         } else {
             request.getSession().setAttribute(Constants.USER, u);
             response.setStatus(HttpServletResponse.SC_OK);
