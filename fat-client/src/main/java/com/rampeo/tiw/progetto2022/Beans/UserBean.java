@@ -19,5 +19,4 @@ public class UserBean {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

@@ -1,107 +1,118 @@
 @import "color.css";
 
+/* === FONT FACES ===
+   exo-2-regular - latin */
+/* source-sans-pro-regular - latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/source-sans-pro-v21-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/source-sans-pro-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/source-sans-pro-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
+
 * {
-    font-family: sans-serif;
-    transition: ease-in-out 250ms;
-}
-
-p {
-    padding: 5px;
-    margin: 5px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    padding: 10px;
-    margin: 15px;
-    font-family: sans-serif;
-    text-align: center;
-    color: var(--special-text-color);
-    border-color: var(--special-bg-color);
-    background-color: var(--special-bg-color);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 5px;
-    --shadow-placement: 2px 2px 0 0;
-    box-shadow: var(--shadow-placement) rgba(var(--shadow-color-rgb), 0.5);
-}
-
-.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
-    box-shadow: none;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 body {
-    color: var(--text-color);
-
-    width: 960px;
+    width: 1020px;
     max-width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-
-    justify-content: start;
-    align-items: center;
     margin: auto;
-
     background-color: var(--subtle-color);
 }
 
-.hidden {
+* {
+    box-shadow: none;
+    transition: ease-in-out 250ms;
+}
+
+.hide {
+    /* === HIDES THE ELEMENT FROM VIEW === */
     visibility: collapse;
     display: none;
 }
 
-input, .button {
-    text-align: center;
+.grows:hover {
+    /* === GROW ON HOVER === */
+    transform: scale(1.1);
 }
 
-input, .box, .button {
-    background-color: var(--bg-color);
-    border-color: var(--border-color);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 5px;
-    --shadow-placement: 5px 5px 0 0;
+.grows .grows:hover {
+    /* === GROW ON HOVER === */
+    transform: scale(1.05);
+}
+
+/* === SHADOWS === */
+.shadow {
+    --shadow-placement: 6px 6px 0 0;
     box-shadow: var(--shadow-placement) rgba(var(--shadow-color-rgb), 0.5);
 }
 
-input.special, .box.special, .button.special {
-    font-family: sans-serif;
+.shadow .shadow {
+    --shadow-placement: 3px 3px 0 0;
+}
+
+/* === TABLE FORMATTING === */
+table {
+    border: 0 solid var(--border-color);
+    border-radius: 5px;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+    color: var(--text-soft-color);
+    margin: 10px;
+}
+
+thead {
     color: var(--special-text-color);
-    border-color: var(--special-bg-color);
     background-color: var(--special-bg-color);
 }
 
-.button.special:hover {
-    color: var(--text-soft-color);
-    border-color: var(--border-color);
+th, td {
+    padding: 5px 10px;
+}
+
+tr {
     background-color: var(--mark-color);
 }
 
-.box {
-    color: var(--text-color);
-    padding: 20px;
-    margin: 15px;
+tr:nth-child(2n+1) {
+    background-color: var(--special-mark-color);
 }
 
-.box:hover  {
-    transform: scale(1.05);
-    --shadow-placement: 7px 7px 0 0;
+tr:hover {
+    background-color: rgba(var(--special-bg-color-rgb), 0.5);
+}
+
+/* === TEXT FORMATTING === */
+.text-center {
+    text-align: center;
+}
+
+p, label {
+    color: var(--text-color);
 }
 
 input, .button {
-    --shadow-placement: 2px 2px 0 0;
-    padding: 5px;
-    margin: 5px;
-    outline: 0;
+    text-align: center;
+    align-content: center;
+    color: var(--text-soft-color);
 }
 
-input:focus, input:hover, .button:focus, .button:hover {
-    background-color: var(--mark-color);
-    border: 1px solid var(--outline-color);
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-weight: bold;
+    color: var(--special-text-color);
+    background-color: var(--special-bg-color);
 }
 
+/* === FLEXBOX === */
 .col, .row {
     display: flex;
     flex-wrap: wrap;
@@ -119,44 +130,6 @@ input:focus, input:hover, .button:focus, .button:hover {
     flex-direction: row;
 }
 
-.text-center {
-    text-align: center;
-}
-
-thead {
-    color: var(--special-text-color);
-    background-color: var(--special-bg-color);
-}
-
-table {
-    border: 1px solid var(--border-color);
-}
-
-table {
-    border-radius: 5px;
-    border-spacing: 0;
-    border-collapse: separate;
-    overflow: hidden;
-    --shadow-placement: 2px 2px 0 0;
-    box-shadow: var(--shadow-placement) rgba(var(--shadow-color-rgb), 0.5);
-}
-
-th, td {
-    padding: 5px 7px;
-}
-
-tr {
-    background-color: var(--mark-color);
-}
-
-tr:nth-child(2n+1){
-    background-color: var(--special-mark-color);
-}
-
-tr:hover{
-    background-color: rgba(var(--special-bg-color-rgb), 0.5);
-}
-
 .spread {
     width: 100%;
 
@@ -171,19 +144,70 @@ tr:hover{
     width: 45%;
 }
 
-label {
-    text-align: center;
+/* === VARIOUS === */
+p {
+    padding: 5px;
+    margin: 5px;
 }
 
-.highlighted {
-    color: var(--special-bg-color);
+h1, h2, h3, h4, h5, h6 {
+    padding: 10px;
+    margin: 15px;
+    border-width: 0;
+    border-style: solid;
+    border-radius: 5px;
 }
 
-td, label, input {
+input, .box, .button {
+    background-color: var(--bg-color);
+    border-color: var(--border-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+input, .button {
+    padding: 5px;
+    margin: 5px;
+    outline: 0;
+}
+
+.box {
+    padding: 20px;
+    margin: 15px;
+}
+
+.button {
+    font-weight: bold;
     color: var(--text-soft-color);
+    border-color: var(--border-color);
+    background-color: var(--mark-color);
+}
+
+.button:hover {
+    color: var(--special-text-color);
+    background-color: var(--special-bg-color);
+    border: 1px solid var(--special-bg-color);
+}
+
+.button:focus {
+    font-weight: bold;
+    border: 1px solid var(--special-bg-color);
+    outline: 1px solid var(--outline-color);
+}
+
+input:focus, input:hover {
+    background-color: var(--mark-color);
+    border: 1px solid var(--outline-color);
+}
+
+input:focus {
+    outline: 1px solid var(--outline-color);
 }
 
 .modal {
+    /* === MODAL WINDOW === */
+    margin: auto;
     display: none;
     position: fixed;
     z-index: 1;
@@ -192,21 +216,12 @@ td, label, input {
     overflow: auto;
     width: 100%;
     height: 100%;
-    background-color: rgba(var(--dark-color-rgb), 0.5);
+    background-color: rgba(var(--subtle-color-rgb), 0.5);
 }
 
-/* The Close Button */
-.close {
+/* === SPECIAL === */
+input.special, .box.special {
     color: var(--special-text-color);
+    border-color: var(--special-bg-color);
     background-color: var(--special-bg-color);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--text-color);
-    text-decoration: none;
-    cursor: pointer;
 }
