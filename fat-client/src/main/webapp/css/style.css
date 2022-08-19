@@ -105,6 +105,10 @@ input, .button {
     color: var(--text-soft-color);
 }
 
+input, label{
+    width: 20ch;
+}
+
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-weight: bold;
@@ -138,10 +142,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.half {
-    width: 45%;
 }
 
 /* === VARIOUS === */

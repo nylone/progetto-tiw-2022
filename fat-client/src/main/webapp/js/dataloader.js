@@ -61,15 +61,11 @@
             admin.innerText = meeting.admin.email;
         })
     }
-    function loadMeetings() {
-        loadCreatedMeetings();
-        loadInvitedMeetings();
-    }
 
     function loadUsers() {
         const endpoint = "/users";
         const request = new XMLHttpRequest();
-        const table = document.getElementById("other-users-table");
+        const table = document.getElementById("select-users-table");
 
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
@@ -82,18 +78,20 @@
                         table.parentElement.classList.remove("hide");
                         meetings.forEach((user) => {
                             const row = document.createElement("tr");
-                            table.append(row);
-                            const title = row.insertCell();
-                            const date = row.insertCell();
-                            const time = row.insertCell();
-                            const duration = row.insertCell();
-                            const capacity = row.insertCell();
+                            const checkbox = document.createElement("input");
+                            const email = document.createElement("label");
 
-                            title.innerText = meeting.title;
-                            date.innerText = meeting.date;
-                            time.innerText = meeting.time;
-                            duration.innerText = meeting.duration;
-                            capacity.innerText = meeting.capacity;
+                            table.append(row);
+                            row.insertCell().appendChild(checkbox);
+                            row.insertCell().appendChild(email);
+
+                            checkbox.id = user.id;
+                            checkbox.value = user.id;
+                            checkbox.name = "selected";
+                            checkbox.type = "checkbox";
+
+                            email.setAttribute("for", user.id);
+                            email.innerText = user.email;
                         });
                     }
                 }
@@ -101,16 +99,22 @@
         };
 
         request.open("post", endpoint, true);
-        request.send(data);
+        request.send();
     }
 
 
     // execution
     {
-        loadMeetings();
+        const load = () => {
+          loadUsers();
+          loadCreatedMeetings();
+          loadInvitedMeetings();
+        }
 
         const refresh = document.getElementById("refresh-meetings")
-        refresh.onclick = loadMeetings;
-        refresh.onkeydown = loadMeetings;
+        refresh.onclick = load;
+        refresh.onkeydown = load;
+
+        load();
     }
 })()

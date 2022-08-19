@@ -5,8 +5,10 @@
     <title>Home</title>
 
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/deps/luxon.js"></script>
     <script defer src="js/dataloader.js"></script>
     <script defer src="js/modal.js"></script>
+    <script defer src="js/creation.js"></script>
 </head>
 <body class="col">
 <h1 class="text-center shadow">MEETINGS</h1>
@@ -53,40 +55,44 @@
                 Here's more info:<br>
             </p>
             <form class="col" action="#" id="create-meeting-form">
-                <fieldset class="row box shadow grows">
+                <fieldset class="col box shadow grows">
                     <legend><h4 class="shadow">Meeting INFO</h4></legend>
-                    <div class="col">
                         <div class="spread">
                             <label class="half text-center" for="form-title">Title</label>
-                            <input class="half shadow grows" id="form-title" name="title" placeholder="title" required type="text">
+                            <input class="half shadow grows" id="form-title" name="title" placeholder="title"
+                                   required type="text">
                         </div>
                         <div class="spread">
-                            <label class="half text-center" for="form-date">Start date</label>
-                            <input class="half shadow grows" id="form-date" name="date" placeholder="start date" required type="text">
+                            <label class="half text-center" for="form-start">When</label>
+                            <input class="half shadow grows" id="form-start" name="start"
+                                   required type="datetime-local">
                         </div>
-                        <div class="spread">
-                            <label class="half text-center" for="form-time">Start time</label>
-                            <input class="half shadow grows" id="form-time" name="time" placeholder="start time" required type="text">
-                        </div>
-                    </div>
-                    <div class="col">
                         <div class="spread">
                             <label class="half text-center" for="form-duration">Duration</label>
-                            <input class="half shadow grows" id="form-duration" name="duration" placeholder="duration" required
-                                   type="number">
+                            <input class="half shadow grows" id="form-duration" name="duration"
+                                   required type="number">
                         </div>
-
                         <div class="spread">
                             <label class="half text-center" for="form-capacity">Capacity</label>
                             <input class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity" required
                                    type="number">
                         </div>
                         <input class="button shadow grows" id="send" type="submit" value="CREATE MEETING">
-                    </div>
                 </fieldset>
                 <fieldset class="col box shadow grows">
                     <legend><h4 class="shadow">Meeting PARTICIPANTS</h4></legend>
-
+                    <table id="select-users-table" class="text-center shadow grows">
+                        <thead>
+                        <tr>
+                            <th>SELECTED</th>
+                            <th>USER</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td><input id="userid" name="selected" checked value="userid" type="checkbox"></td>
+                            <td><label for="userid">E-MAIL</label></td>
+                        </tr>
+                    </table>
                 </fieldset>
             </form>
         </div>
