@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.rampeo.tiw.progetto2022.Beans.MeetingBean;
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.DAOs.MeetingDAO;
-import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
 import com.rampeo.tiw.progetto2022.Utils.Constants;
 
 import javax.servlet.annotation.MultipartConfig;

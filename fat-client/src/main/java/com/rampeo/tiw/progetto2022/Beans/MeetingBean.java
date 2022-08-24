@@ -1,7 +1,5 @@
 package com.rampeo.tiw.progetto2022.Beans;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.List;

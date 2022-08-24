@@ -4,7 +4,6 @@ import com.rampeo.tiw.progetto2022.Beans.MeetingBean;
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
