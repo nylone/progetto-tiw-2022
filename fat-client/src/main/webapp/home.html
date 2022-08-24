@@ -6,96 +6,95 @@
 
     <link href="css/style.css" rel="stylesheet">
     <script defer src="js/deps/luxon.js"></script>
-    <script defer src="js/dataloader.js"></script>
-    <script defer src="js/modal.js"></script>
-    <script defer src="js/creation.js"></script>
+    <script defer src="js/home.js"></script>
 </head>
 <body class="col">
 <h1 class="text-center shadow">MEETINGS</h1>
 <div class="col box shadow grows">
-    <div class="col hide">
-        <h3 class="shadow">MEETINGS YOU CREATED</h3>
-        <table class="text-center shadow grows" id="created-meetings-table">
-            <thead>
-            <tr>
-                <th>TITLE</th>
-                <th>DATE</th>
-                <th>TIME</th>
-                <th>DURATION</th>
-                <th>CAPACITY</th>
-            </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="col hide">
-        <h3 class="shadow">MEETINGS YOU HAVE BEEN INVITED TO</h3>
-        <table class="text-center shadow grows" id="invited-meetings-table">
-            <thead>
-            <tr>
-                <th>ADMIN</th>
-                <th>TITLE</th>
-                <th>DATE</th>
-                <th>TIME</th>
-                <th>DURATION</th>
-                <th>CAPACITY</th>
-            </tr>
-            </thead>
-        </table>
-    </div>
-
+    <h3 class="shadow">MEETINGS YOU CREATED</h3>
+    <h5 class="shadow" id="no-own-meetings-message">NO MEETINGS TO DISPLAY</h5>
+    <table class="text-center shadow grows" id="created-meetings-table">
+        <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>DURATION</th>
+            <th>CAPACITY</th>
+        </tr>
+        </thead>
+    </table>
 </div>
-<div class="box shadow grows row">
-    <button class="button shadow grows" id="refresh-meetings">REFRESH LISTS</button>
-    <button class="button shadow grows" id="modal-open">CREATE A MEETING</button>
+<div class="col box shadow grows">
+    <h3 class="shadow">MEETINGS YOU HAVE BEEN INVITED TO</h3>
+    <h5 class="shadow" id="no-other-meetings-message">NO MEETINGS TO DISPLAY</h5>
+    <table class="text-center shadow grows" id="invited-meetings-table">
+        <thead>
+        <tr>
+            <th>ADMIN</th>
+            <th>TITLE</th>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>DURATION</th>
+            <th>CAPACITY</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="box shadow grows col">
+    <div class="row">
+        <button class="button shadow grows" id="refresh-meetings">REFRESH LISTS</button>
+        <button class="button shadow grows" id="modal-open">CREATE A MEETING</button>
+        <button class="button shadow grows" id="logout">LOGOUT</button>
+    </div>
+    <h5 id="meeting-creation-aborted" class="shadow" hidden>Too many attempts to create a meeting with too many participants.<br>
+    Your meeting will not be created.</h5>
 </div>
 <div class="modal" id="modal">
     <div class="box col">
-            <span class="button shadow grows" id="modal-close">CLOSE THIS WINDOW</span>
-            <p class="box special hide" id="failed-creation">Failed to create a meeting.<br>
-                Here's more info:<br>
-            </p>
-            <form class="col" action="#" id="create-meeting-form">
-                <fieldset class="col box shadow grows">
-                    <legend><h4 class="shadow">Meeting INFO</h4></legend>
-                        <div class="spread">
-                            <label class="half text-center" for="form-title">Title</label>
-                            <input class="half shadow grows" id="form-title" name="title" placeholder="title"
-                                   required type="text">
-                        </div>
-                        <div class="spread">
-                            <label class="half text-center" for="form-start">When</label>
-                            <input class="half shadow grows" id="form-start" name="start"
-                                   required type="datetime-local">
-                        </div>
-                        <div class="spread">
-                            <label class="half text-center" for="form-duration">Duration</label>
-                            <input class="half shadow grows" id="form-duration" name="duration"
-                                   required type="number">
-                        </div>
-                        <div class="spread">
-                            <label class="half text-center" for="form-capacity">Capacity</label>
-                            <input class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity" required
-                                   type="number">
-                        </div>
-                        <input class="button shadow grows" id="send" type="submit" value="CREATE MEETING">
-                </fieldset>
-                <fieldset class="col box shadow grows">
-                    <legend><h4 class="shadow">Meeting PARTICIPANTS</h4></legend>
-                    <table id="select-users-table" class="text-center shadow grows">
-                        <thead>
-                        <tr>
-                            <th>SELECTED</th>
-                            <th>USER</th>
-                        </tr>
-                        </thead>
-                        <tr>
-                            <td><input id="userid" name="selected" checked value="userid" type="checkbox"></td>
-                            <td><label for="userid">E-MAIL</label></td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </form>
-        </div>
+        <span class="button shadow grows" id="modal-close">CLOSE THIS WINDOW</span>
+        <form action="#" class="col" id="create-meeting-form">
+            <fieldset class="col box shadow grows">
+                <legend><h4 class="shadow">Meeting INFO</h4></legend>
+                <div class="spread">
+                    <label class="half text-center" for="form-title">Title</label>
+                    <input class="half shadow grows" id="form-title" name="title" placeholder="title"
+                            type="text">
+                </div>
+                <div class="spread">
+                    <label class="half text-center" for="form-start">When</label>
+                    <input class="half shadow grows" id="form-start" name="start"
+                            type="datetime-local">
+                </div>
+                <div class="spread">
+                    <label class="half text-center" for="form-duration">Duration</label>
+                    <input class="half shadow grows" id="form-duration" name="duration" placeholder="minutes"
+                            type="number">
+                </div>
+                <div class="spread">
+                    <label class="half text-center" for="form-capacity">Capacity</label>
+                    <input class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity"
+                            type="number">
+                </div>
+                <input class="button shadow grows" id="send" type="submit" value="CREATE MEETING">
+            </fieldset>
+            <fieldset class="col box shadow grows">
+                <legend><h4 class="shadow">Meeting PARTICIPANTS</h4></legend>
+                <h5 class="shadow" id="no-users-message">No users to invite</h5>
+                <h5 class="shadow" id="select-users-message">Please select at least a user</h5>
+                <h5 class="shadow" id="too-many-users-message">Too many users selected.<br>
+                    Remove at least <span id="too-many-users-number">n</span></h5>
+                <table class="text-center shadow grows" id="select-users-table">
+                    <thead>
+                    <tr>
+                        <th>SELECTED</th>
+                        <th>USER</th>
+                    </tr>
+                    </thead>
+                </table>
+            </fieldset>
+        </form>
+    </div>
 </div>
 </body>
 </html>

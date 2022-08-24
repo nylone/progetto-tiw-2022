@@ -2,23 +2,27 @@ package com.rampeo.tiw.progetto2022.Beans;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.Instant;
+import java.util.Collection;
+import java.util.List;
 
 public class MeetingBean {
     private Long id = null;
     private String title = null;
-    private Date date = null;
-    private Time time = null;
+    private Long start = null;
     private Integer duration = null;
     private Integer capacity = null;
     private UserBean admin = null;
 
-    public Time getTime() {
-        return time;
+    public List<Long> getInvites() {
+        return invites.stream().toList();
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setInvites(Collection<Long> invites) {
+        this.invites = invites;
     }
+
+    private Collection<Long> invites = null;
 
     public Long getId() {
         return id;
@@ -36,12 +40,12 @@ public class MeetingBean {
         this.title = title;
     }
 
-    public Date getDate() {
-        return date;
+    public Instant getStart() {
+        return Instant.ofEpochMilli(start);
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStart(Instant start) {
+        this.start = start.toEpochMilli();
     }
 
 

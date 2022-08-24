@@ -13,6 +13,9 @@ import java.io.IOException;
 @WebFilter(filterName = "AuthFilter", urlPatterns = {
         Constants.HOME_PAGE,
         Constants.GET_MEETINGS_ENDPOINT,
+        Constants.GET_USERS_ENDPOINT,
+        Constants.CREATE_MEETING_ENDPOINT,
+        Constants.LOGOUT_ENDPOINT,
 })
 public class AuthFilter implements Filter {
 

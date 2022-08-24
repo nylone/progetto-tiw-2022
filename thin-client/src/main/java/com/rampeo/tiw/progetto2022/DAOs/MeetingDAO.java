@@ -19,7 +19,7 @@ public class MeetingDAO extends AbstractDAO {
         final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, " +
                 "m.admin AS admin_id, u.email as admin_email FROM meeting m " +
                 "JOIN user u ON m.admin = u.id " +
-                "WHERE u.id = ?";
+                "WHERE u.id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setLong(1, admin.getId());
             try (ResultSet result = pstatement.executeQuery()) {
@@ -52,7 +52,7 @@ public class MeetingDAO extends AbstractDAO {
         final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.email as admin_email " +
                 "FROM meeting m JOIN meeting_invite mi ON m.id = mi.m_id " +
                 "JOIN user u ON m.admin = u.id " +
-                "WHERE mi.u_id = ?";
+                "WHERE mi.u_id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setLong(1, user.getId());
             try (ResultSet result = pstatement.executeQuery()) {

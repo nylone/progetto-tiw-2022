@@ -1,4 +1,21 @@
 {
+    { // handles logout
+        const id = "logout";
+        const endpoint = "/logout";
+        const request = new XMLHttpRequest();
+
+        request.onreadystatechange = () => {
+            if (request.readyState === 4) {
+                if (request.status === 200) window.location.assign("auth.html");
+            }
+        };
+
+        document.getElementById(id).onclick = () => {
+            request.open("post", endpoint, true);
+            request.send();
+        };
+    }
+
     let loadData;
     let users = [];
     {   // DATA LOADING FROM SERVER

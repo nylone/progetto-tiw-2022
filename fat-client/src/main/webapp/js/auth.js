@@ -9,7 +9,7 @@
             if (request.readyState === 4) {
                 if (request.status === 200) window.location.assign("home.html");
                 else {
-                    document.getElementById("failed-sing-in").classList.remove("hidden");
+                    document.getElementById("failed-sing-in").hidden = false;
                 }
             }
         };
@@ -34,7 +34,7 @@
             if (request.readyState === 4) {
                 if (request.status === 200) window.location.assign("home.html");
                 else {
-                    document.getElementById("failed-sing-up").classList.remove("hidden");
+                    document.getElementById("failed-sing-up").hidden = false;
                 }
             }
         };
@@ -47,13 +47,14 @@
             const data = new FormData(e.target.closest("form"));
             const pass = data.get("pass");
             const confPass = data.get("pass-confirm");
-            if (pass.match("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && pass === confPass) {
+            if (data.get("email").match("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])") &&
+                pass.match("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && pass === confPass) {
                 // server only needs the password
                 data.delete("pass-confirm");
                 request.open("post", endpoint, true);
                 request.send(data);
             } else {
-                document.getElementById("failed-sing-up").classList.remove("hidden");
+                document.getElementById("failed-sing-up").hidden = false;
             }
         });
     }
