@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "CreateMeeting", urlPatterns = {Constants.CREATE_MEETING_ENDPOINT})
+@WebServlet(name = "CreateMeeting", urlPatterns = { Constants.CREATE_MEETING_ENDPOINT })
 @MultipartConfig
 public class CreateMeeting extends HttpServlet {
 
@@ -46,8 +46,7 @@ public class CreateMeeting extends HttpServlet {
                 HTTPParameterChecker.checkType(request, "start", ZonedDateTime::parse) &&
                 HTTPParameterChecker.checkType(request, "duration", Integer::parseInt) &&
                 HTTPParameterChecker.checkType(request, "max_participants", Integer::parseInt) &&
-                HTTPParameterChecker.checkType(request, "selected", Long::parseLong)
-        ) {
+                HTTPParameterChecker.checkType(request, "selected", Long::parseLong)) {
             // extract the parameters into the respective subtypes
             String title = request.getParameter("title").trim();
             ZonedDateTime start = ZonedDateTime.parse(request.getParameter("start"));
@@ -64,8 +63,7 @@ public class CreateMeeting extends HttpServlet {
                     duration > 0 &&
                     maxParticipants > 0 &&
                     selected.size() <= maxParticipants &&
-                    !selected.contains(userBean.getId())
-            ) {
+                    !selected.contains(userBean.getId())) {
                 try (MeetingDAO meetingDAO = new MeetingDAO()) {
                     MeetingBean meetingBean = new MeetingBean();
                     meetingBean.setTitle(title);

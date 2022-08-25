@@ -32,7 +32,8 @@ public class MeetingDAO extends AbstractDAO {
                         meetingBean.setTitle(result.getString("title"));
                         Date startDate = result.getDate("date");
                         Time startTime = result.getTime("time");
-                        meetingBean.setStart(startDate.toLocalDate().atTime(startTime.toLocalTime()).toInstant(ZoneOffset.UTC));
+                        meetingBean.setStart(
+                                startDate.toLocalDate().atTime(startTime.toLocalTime()).toInstant(ZoneOffset.UTC));
                         meetingBean.setDuration(result.getInt("duration"));
                         meetingBean.setCapacity(result.getInt("max_participants"));
                         meetingBeanList.add(meetingBean);
@@ -51,9 +52,9 @@ public class MeetingDAO extends AbstractDAO {
         return extractMeetings(query, user);
     }
 
-
     public List<MeetingBean> getInvitedMeetings(UserBean user) throws SQLException {
-        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.email as admin_email " +
+        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.email as admin_email "
+                +
                 "FROM meeting m JOIN meeting_invite mi ON m.id = mi.m_id " +
                 "JOIN user u ON m.admin = u.id " +
                 "WHERE mi.u_id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
@@ -61,7 +62,8 @@ public class MeetingDAO extends AbstractDAO {
     }
 
     public void createMeeting(MeetingBean meeting) throws SQLException {
-        getConnection().setAutoCommit(false); // multiple queries happen in this function, ability to rollback is critical
+        getConnection().setAutoCommit(false); // multiple queries happen in this function, ability to rollback is
+                                              // critical
         Connection con = getConnection();
         final String createMeeting = "INSERT INTO meeting (title, date, time, duration, max_participants, admin) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
