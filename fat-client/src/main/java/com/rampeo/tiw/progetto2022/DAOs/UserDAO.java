@@ -59,12 +59,7 @@ public class UserDAO extends AbstractDAO {
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setString(1, email);
             try (ResultSet result = pstatement.executeQuery()) {
-                if (!result.isBeforeFirst()) // no results, credential check failed
-                    return true;
-                else {
-                    result.next();
-                    return false;
-                }
+                return !result.isBeforeFirst();
             }
         }
     }

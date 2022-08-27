@@ -8,7 +8,8 @@ flush privileges;
 create table if not exists user
 (
     id    serial primary key,
-    email varchar(255) not null,
+    username varchar(20) not null unique,
+    email varchar(255) not null unique,
     hash  binary(64)   not null,
     salt  binary(16)   not null
 );
@@ -28,7 +29,8 @@ create table if not exists meeting_invite
 (
     id   serial primary key,
     m_id bigint unsigned not null references meeting (id),
-    u_id bigint unsigned not null references user (id)
+    u_id bigint unsigned not null references user (id),
+    constraint no_duplicate_invite unique(m_id, u_id)
 );
 
 create procedure assert_max_participants_constraint(in new_m_id bigint unsigned)
