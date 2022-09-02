@@ -58,22 +58,22 @@
                 <legend><h4 class="shadow">Meeting INFO</h4></legend>
                 <div class="spread">
                     <label class="half text-center" for="form-title">Title</label>
-                    <input class="half shadow grows" id="form-title" name="title" placeholder="title"
+                    <input required class="half shadow grows" id="form-title" name="title" placeholder="title"
                             type="text">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-start">When</label>
-                    <input class="half shadow grows" id="form-start" name="start"
+                    <input required class="half shadow grows" id="form-start" name="start"
                             type="datetime-local">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-duration">Duration</label>
-                    <input class="half shadow grows" id="form-duration" name="duration" placeholder="minutes"
+                    <input required class="half shadow grows" id="form-duration" name="duration" placeholder="minutes"
                             type="number">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-capacity">Capacity</label>
-                    <input class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity"
+                    <input required class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity"
                             type="number">
                 </div>
                 <input class="button shadow grows" id="send" type="submit" value="CREATE MEETING">

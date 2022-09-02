@@ -26,7 +26,7 @@ public class MeetingDAO extends AbstractDAO {
                         MeetingBean meetingBean = new MeetingBean();
                         UserBean userBean = new UserBean();
                         userBean.setId(result.getLong("admin_id"));
-                        userBean.setEmail(result.getString("admin_email"));
+                        userBean.setUname(result.getString("admin_uname"));
                         meetingBean.setAdmin(userBean);
                         meetingBean.setId(result.getLong("id"));
                         meetingBean.setTitle(result.getString("title"));
@@ -45,16 +45,15 @@ public class MeetingDAO extends AbstractDAO {
     }
 
     public List<MeetingBean> getCreatedMeetings(UserBean user) throws SQLException {
-        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, " +
-                "m.admin AS admin_id, u.email as admin_email FROM meeting m " +
+        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, u.uname as admin_uname, " +
+                "m.admin AS admin_id FROM meeting m " +
                 "JOIN user u ON m.admin = u.id " +
                 "WHERE u.id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
         return extractMeetings(query, user);
     }
 
     public List<MeetingBean> getInvitedMeetings(UserBean user) throws SQLException {
-        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.email as admin_email "
-                +
+        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.uname as admin_uname " +
                 "FROM meeting m JOIN meeting_invite mi ON m.id = mi.m_id " +
                 "JOIN user u ON m.admin = u.id " +
                 "WHERE mi.u_id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";

@@ -17,7 +17,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.sql.SQLException;
 
 @WebServlet(name = "Login", urlPatterns = {URLs.LOGIN})
-public class Login extends ThymeleafHTTPServlet {
+public class DoLogin extends ThymeleafHTTPServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -25,7 +25,9 @@ public class Login extends ThymeleafHTTPServlet {
         String pwd = request.getParameter("pass");
 
         if (usrn == null || usrn.isEmpty() || pwd == null || pwd.isEmpty()) {
-            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_EMPTY_FIELDS).toString());
+            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
+                    .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_EMPTY_FIELDS)
+                    .toString());
             return;
         }
 
@@ -33,15 +35,16 @@ public class Login extends ThymeleafHTTPServlet {
         try (UserDAO userDAO = new UserDAO()) {
             u = userDAO.checkCredentials(usrn, pwd);
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, URLs.AUTH_PAGE)
                     .toString());
             return;
         }
 
         if (u == null) {
-            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE).addParam(AttributeNames.ERROR, ErrorParameter.AUTH_FAILED_AUTHENTICATION).toString());
+            response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
+                    .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_FAILED_AUTHENTICATION)
+                    .toString());
         } else {
             request.getSession().setAttribute(AttributeNames.USER, u);
             response.sendRedirect(URLs.HOME_PAGE);

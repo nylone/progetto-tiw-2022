@@ -72,7 +72,7 @@
         function loadInvitedMeetings() {
             _loadMeetings("invited", "invited-meetings-table", "no-other-meetings-message", (meeting, table) => {
                 const row = document.createElement("tr");
-                table.append(row);                duration.innerText = String(meeting.duration) + " minutes";
+                table.append(row);
 
                 const admin = row.insertCell();
                 const title = row.insertCell();
@@ -86,7 +86,7 @@
                 time.innerText = luxon.DateTime.fromMillis(meeting.start).toLocaleString(luxon.DateTime.TIME_SIMPLE);
                 duration.innerText = String(Math.floor(Number(meeting.duration)/60)) + " hours " + String(Math.floor(Number(meeting.duration)%60)) + " minutes";
                 capacity.innerText = meeting.capacity;
-                admin.innerText = meeting.admin.email;
+                admin.innerText = meeting.admin.uname;
             })
         }
 
@@ -110,11 +110,11 @@
                             users.forEach((user) => {
                                 const row = document.createElement("tr");
                                 const checkbox = document.createElement("input");
-                                const email = document.createElement("label");
+                                const uname = document.createElement("label");
 
                                 table.append(row);
                                 row.insertCell().appendChild(checkbox);
-                                row.insertCell().appendChild(email);
+                                row.insertCell().appendChild(uname);
 
                                 checkbox.id = user.id;
                                 checkbox.value = user.id;
@@ -122,8 +122,8 @@
                                 checkbox.type = "checkbox";
                                 checkbox.onchange = checkSelected;
 
-                                email.setAttribute("for", user.id);
-                                email.innerText = user.email;
+                                uname.setAttribute("for", user.id);
+                                uname.innerText = user.uname;
                             });
                         } else {
                             document.getElementById("no-users-message").hidden = false;
@@ -249,7 +249,6 @@
         let failsCounter = 0;
 
         const handleFailure = function (skip) {
-            console.log("handling")
             if (skip || ++failsCounter === 3) {
                 failsCounter = 0;
                 form.reset();
@@ -306,4 +305,4 @@
     }
 
     reload();
-}
+}11121321321312;

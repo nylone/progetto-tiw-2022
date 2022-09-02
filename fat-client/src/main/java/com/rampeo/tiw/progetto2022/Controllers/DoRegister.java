@@ -22,11 +22,15 @@ public class DoRegister extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         final String email = request.getParameter("email");
+        final String uname = request.getParameter("uname");
         final String pass = request.getParameter("pass");
 
-        if (email == null || email.isEmpty() || pass == null || pass.isEmpty() ||
+        if (email == null || email.isEmpty() ||
+                pass == null || pass.isEmpty() ||
+                uname == null || uname.isEmpty() ||
                 !InputStringChecker.checkEmail(email) ||
-                !InputStringChecker.checkPass(pass)) {
+                !InputStringChecker.checkPass(pass) ||
+                !InputStringChecker.checkUname(uname)) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
@@ -34,7 +38,7 @@ public class DoRegister extends HttpServlet {
         try (UserDAO userDAO = new UserDAO()) {
             UserBean u;
             if (userDAO.checkUnique(email)) {
-                userDAO.addCredentials(email, pass);
+                userDAO.addCredentials(email, pass, uname);
                 u = userDAO.authenticate(email, pass);
                 request.getSession().setAttribute(Constants.USER, u);
                 response.setStatus(HttpServletResponse.SC_OK);

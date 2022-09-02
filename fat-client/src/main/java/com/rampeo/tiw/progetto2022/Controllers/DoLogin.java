@@ -20,17 +20,17 @@ public class DoLogin extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String usrn = request.getParameter("email");
+        String email = request.getParameter("email");
         String pwd = request.getParameter("pass");
 
-        if (usrn == null || usrn.isEmpty() || pwd == null || pwd.isEmpty()) {
+        if (email == null || email.isEmpty() || pwd == null || pwd.isEmpty()) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
         UserBean u;
         try (UserDAO userDAO = new UserDAO()) {
-            u = userDAO.authenticate(usrn, pwd);
+            u = userDAO.authenticate(email, pwd);
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;

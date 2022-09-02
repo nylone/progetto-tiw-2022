@@ -8,7 +8,7 @@ flush privileges;
 create table if not exists user
 (
     id    serial primary key,
-    username varchar(20) not null unique,
+    uname varchar(20) not null unique,
     email varchar(255) not null unique,
     hash  binary(64)   not null,
     salt  binary(16)   not null

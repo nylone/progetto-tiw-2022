@@ -61,10 +61,10 @@ public class CompleteMeeting extends ThymeleafHTTPServlet {
                 return;
             }
 
-            if (invited.contains(creationBean.getMeetingBean().getAdmin().getId())) {
-                response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
+            final Long adminID = creationBean.getMeetingBean().getAdmin().getId();
+            if (invited.contains(adminID)) {
+                response.sendRedirect(new PathBuilder(URLs.LINK_TO_MEETING_PAGE)
                         .addParam(AttributeNames.ERROR, ErrorParameter.CREATION_ADMIN_INVITED)
-                        .addParam(AttributeNames.REDIRECT, URLs.LINK_TO_MEETING_PAGE)
                         .toString());
                 return;
             }

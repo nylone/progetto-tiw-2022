@@ -2,7 +2,15 @@ package com.rampeo.tiw.progetto2022.Beans;
 
 public class UserBean {
     private Long id = null;
-    private String email = null;
+    private String uname = null;
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
 
     public Long getId() {
         return id;
@@ -10,13 +18,5 @@ public class UserBean {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

@@ -34,7 +34,7 @@ public class UserDAO extends AbstractDAO {
     }
 
     public List<UserBean> getOtherUsers(UserBean user) throws SQLException {
-        String query = "SELECT id, email FROM user WHERE id<>?";
+        String query = "SELECT id, uname FROM user WHERE id<>?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setLong(1, user.getId());
             try (ResultSet result = pstatement.executeQuery()) {
@@ -45,7 +45,7 @@ public class UserDAO extends AbstractDAO {
                     while (result.next()) {
                         UserBean userBean = new UserBean();
                         userBean.setId(result.getLong("id"));
-                        userBean.setEmail(result.getString("email"));
+                        userBean.setUname(result.getString("uname"));
                         userBeanList.add(userBean);
                     }
                     return List.copyOf(userBeanList);
@@ -54,12 +54,27 @@ public class UserDAO extends AbstractDAO {
         }
     }
 
-    public boolean checkUnique(String email) throws SQLException {
+    public boolean checkUniqueEmail(String email) throws SQLException {
         String query = "SELECT  id FROM user  WHERE email=?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setString(1, email);
             try (ResultSet result = pstatement.executeQuery()) {
-                if (!result.isBeforeFirst()) // no results, credential check failed
+                if (!result.isBeforeFirst())
+                    return true;
+                else {
+                    result.next();
+                    return false;
+                }
+            }
+        }
+    }
+
+    public boolean checkUniqueUname(String uname) throws SQLException {
+        String query = "SELECT  id FROM user  WHERE uname=?";
+        try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
+            pstatement.setString(1, uname);
+            try (ResultSet result = pstatement.executeQuery()) {
+                if (!result.isBeforeFirst())
                     return true;
                 else {
                     result.next();
@@ -84,7 +99,7 @@ public class UserDAO extends AbstractDAO {
             }
         }
         byte[] hash = hashPassword(pass, salt);
-        query = "SELECT  id, email FROM user  WHERE email=? AND hash=?";
+        query = "SELECT  id, uname FROM user  WHERE email=? AND hash=?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setString(1, email);
             pstatement.setBytes(2, hash);
@@ -95,7 +110,7 @@ public class UserDAO extends AbstractDAO {
                     result.next();
                     UserBean userBean = new UserBean();
                     userBean.setId(result.getLong("id"));
-                    userBean.setEmail(result.getString("email"));
+                    userBean.setUname(result.getString("uname"));
                     return userBean;
                 }
             }
@@ -108,16 +123,18 @@ public class UserDAO extends AbstractDAO {
         return factory.generateSecret(spec).getEncoded();
     }
 
-    public void addCredentials(String email, String pass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public UserBean addUser(String email, String pass, String uname) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
         byte[] salt = generateSalt();
         byte[] hash = hashPassword(pass, salt);
-        String query = "INSERT INTO user (email, hash, salt) values (?, ?, ?)";
+        String query = "INSERT INTO user (email, uname, hash, salt) values (?, ?, ?, ?)";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setString(1, email);
-            pstatement.setBytes(2, hash);
-            pstatement.setBytes(3, salt);
+            pstatement.setString(2, uname);
+            pstatement.setBytes(3, hash);
+            pstatement.setBytes(4, salt);
             pstatement.execute();
         }
+        return checkCredentials(email, pass);
     }
 
     private byte[] generateSalt() {

@@ -35,9 +35,8 @@ public class CreateMeeting extends ThymeleafHTTPServlet {
                 return;
             }
         } catch (SQLException e) {
-            response.sendRedirect(new PathBuilder(URLs.ERROR_PAGE)
+            response.sendRedirect(new PathBuilder(URLs.HOME_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
-                    .addParam(AttributeNames.REDIRECT, URLs.HOME_PAGE)
                     .toString());
             return;
         }

@@ -36,6 +36,14 @@
                    type="email">
         </div>
         <div class="container-row">
+            <label class="container-child split-half" for="register-uname"
+                   data-th-text="#{signup.uname.label}">username</label>
+            <input class="container-child split-half" id="register-uname" name="uname" placeholder="example"
+                   required
+                   data-th-placeholder="#{signup.uname.placeholder}"
+                   type="text">
+        </div>
+        <div class="container-row">
             <label class="container-child split-half" for="register-pass1"
                    data-th-text="#{signup.pass1.label}">password</label>
             <input class="container-child split-half" id="register-pass1" name="pass1" placeholder="password" required

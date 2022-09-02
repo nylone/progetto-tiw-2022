@@ -59,7 +59,7 @@
                     </thead>
                     <tbody data-th-remove="all-but-first">
                     <tr data-th-each="meeting : ${invitedMeetings}">
-                        <td data-th-text="${{meeting.admin.getEmail()}}">ADMIN</td>
+                        <td data-th-text="${{meeting.admin.getUname()}}">ADMIN</td>
                         <td data-th-text="${{meeting.title}}">TITLE</td>
                         <td data-th-text="${{meeting.date}}">DATE</td>
                         <td data-th-text="${{meeting.time}}">TIME</td>
