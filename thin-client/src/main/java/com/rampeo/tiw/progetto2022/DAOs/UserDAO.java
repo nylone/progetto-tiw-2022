@@ -84,7 +84,34 @@ public class UserDAO extends AbstractDAO {
         }
     }
 
-    public UserBean checkCredentials(String email, String pass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public UserBean addUser(String email, String pass, String uname) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
+        byte[] salt = generateSalt();
+        byte[] hash = hashPassword(pass, salt);
+        String query = "INSERT INTO user (email, uname, hash, salt) values (?, ?, ?, ?)";
+        try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
+            pstatement.setString(1, email);
+            pstatement.setString(2, uname);
+            pstatement.setBytes(3, hash);
+            pstatement.setBytes(4, salt);
+            pstatement.execute();
+        }
+        return authenticate(email, pass);
+    }
+
+    private byte[] generateSalt() {
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[16];
+        random.nextBytes(salt);
+        return salt;
+    }
+
+    private byte[] hashPassword(String pass, byte[] salt) throws InvalidKeySpecException, NoSuchAlgorithmException {
+        KeySpec spec = new PBEKeySpec(pass.toCharArray(), salt, 65536, 512);
+        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
+        return factory.generateSecret(spec).getEncoded();
+    }
+
+    public UserBean authenticate(String email, String pass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
         byte[] salt;
         String query = "SELECT salt FROM user  WHERE email=?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
@@ -115,32 +142,5 @@ public class UserDAO extends AbstractDAO {
                 }
             }
         }
-    }
-
-    private byte[] hashPassword(String pass, byte[] salt) throws InvalidKeySpecException, NoSuchAlgorithmException {
-        KeySpec spec = new PBEKeySpec(pass.toCharArray(), salt, 65536, 512);
-        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
-        return factory.generateSecret(spec).getEncoded();
-    }
-
-    public UserBean addUser(String email, String pass, String uname) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
-        byte[] salt = generateSalt();
-        byte[] hash = hashPassword(pass, salt);
-        String query = "INSERT INTO user (email, uname, hash, salt) values (?, ?, ?, ?)";
-        try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
-            pstatement.setString(1, email);
-            pstatement.setString(2, uname);
-            pstatement.setBytes(3, hash);
-            pstatement.setBytes(4, salt);
-            pstatement.execute();
-        }
-        return checkCredentials(email, pass);
-    }
-
-    private byte[] generateSalt() {
-        SecureRandom random = new SecureRandom();
-        byte[] salt = new byte[16];
-        random.nextBytes(salt);
-        return salt;
     }
 }

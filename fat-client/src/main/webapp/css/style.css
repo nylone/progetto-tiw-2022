@@ -7,8 +7,8 @@
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
-    url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
 }
 
 * {
@@ -94,7 +94,7 @@ input, .button {
     color: var(--text-soft-color);
 }
 
-input, label{
+input, label {
     width: 20ch;
 }
 

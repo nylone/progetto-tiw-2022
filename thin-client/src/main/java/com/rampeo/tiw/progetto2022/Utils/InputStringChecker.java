@@ -8,9 +8,11 @@ public class InputStringChecker {
     public static boolean checkEmail(String email) {
         return email.matches(emailRegex);
     }
+
     public static boolean checkPass(String pass) {
         return pass.matches(passRegex);
     }
+
     public static boolean checkUname(String uname) {
         return uname.matches(unameRegex);
     }

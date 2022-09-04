@@ -13,7 +13,7 @@ public class DoLogout extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getSession().removeAttribute(Constants.USER);
+        request.getSession().invalidate();
         response.setStatus(HttpServletResponse.SC_OK);
     }
 }

@@ -14,6 +14,14 @@ public class MeetingDAO extends AbstractDAO {
         super();
     }
 
+    public List<MeetingBean> getCreatedMeetings(UserBean user) throws SQLException {
+        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, u.uname as admin_uname, " +
+                "m.admin AS admin_id FROM meeting m " +
+                "JOIN user u ON m.admin = u.id " +
+                "WHERE u.id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
+        return extractMeetings(query, user);
+    }
+
     private List<MeetingBean> extractMeetings(String query, UserBean user) throws SQLException {
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setLong(1, user.getId());
@@ -44,14 +52,6 @@ public class MeetingDAO extends AbstractDAO {
         }
     }
 
-    public List<MeetingBean> getCreatedMeetings(UserBean user) throws SQLException {
-        final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, u.uname as admin_uname, " +
-                "m.admin AS admin_id FROM meeting m " +
-                "JOIN user u ON m.admin = u.id " +
-                "WHERE u.id = ? AND ADDTIME(ADDTIME(m.date, m.time), SEC_TO_TIME(m.duration * 60)) >= UTC_TIMESTAMP()";
-        return extractMeetings(query, user);
-    }
-
     public List<MeetingBean> getInvitedMeetings(UserBean user) throws SQLException {
         final String query = "SELECT m.id, m.title, m.date, m.time, m.duration, m.max_participants, m.admin AS admin_id, u.uname as admin_uname " +
                 "FROM meeting m JOIN meeting_invite mi ON m.id = mi.m_id " +
@@ -62,7 +62,7 @@ public class MeetingDAO extends AbstractDAO {
 
     public void createMeeting(MeetingBean meeting) throws SQLException {
         getConnection().setAutoCommit(false); // multiple queries happen in this function, ability to rollback is
-                                              // critical
+        // critical
         Connection con = getConnection();
         final String createMeeting = "INSERT INTO meeting (title, date, time, duration, max_participants, admin) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";

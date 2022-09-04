@@ -21,10 +21,10 @@ public class DoLogin extends ThymeleafHTTPServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String usrn = request.getParameter("email");
+        String email = request.getParameter("email");
         String pwd = request.getParameter("pass");
 
-        if (usrn == null || usrn.isEmpty() || pwd == null || pwd.isEmpty()) {
+        if (email == null || email.isEmpty() || pwd == null || pwd.isEmpty()) {
             response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_EMPTY_FIELDS)
                     .toString());
@@ -33,7 +33,7 @@ public class DoLogin extends ThymeleafHTTPServlet {
 
         UserBean u;
         try (UserDAO userDAO = new UserDAO()) {
-            u = userDAO.checkCredentials(usrn, pwd);
+            u = userDAO.authenticate(email, pwd);
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
             response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)

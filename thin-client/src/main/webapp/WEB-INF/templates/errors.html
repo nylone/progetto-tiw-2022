@@ -9,10 +9,10 @@
 
     <div class="container-col border"
          data-th-fragment="redirect-button">
-        <a class="container-child button" href="/"
-           data-th-href="${redirect}?:'/'"
+        <a class="container-child button" data-th-href="${redirect}?:'/'"
            data-th-text="#{go_back_button}"
-           data-th-with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}">
+           data-th-with="redirect = ${#httpServletRequest.getParameter(@com.rampeo.tiw.progetto2022.Constants.Attributes.AttributeNames@REDIRECT)}"
+           href="/">
             go back</a>
     </div>
 

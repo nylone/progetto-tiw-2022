@@ -47,8 +47,8 @@
         <button class="button shadow grows" id="modal-open">CREATE A MEETING</button>
         <button class="button shadow grows" id="logout">LOGOUT</button>
     </div>
-    <h5 id="meeting-creation-aborted" class="shadow" hidden>Too many attempts to create a meeting with too many participants.<br>
-    Your meeting will not be created.</h5>
+    <h5 class="shadow" hidden id="meeting-creation-aborted">Too many attempts to create a meeting with the wrong amount of participants.<br>
+        Your meeting will not be created.</h5>
 </div>
 <div class="modal" id="modal">
     <div class="box col">
@@ -58,23 +58,24 @@
                 <legend><h4 class="shadow">Meeting INFO</h4></legend>
                 <div class="spread">
                     <label class="half text-center" for="form-title">Title</label>
-                    <input required class="half shadow grows" id="form-title" name="title" placeholder="title"
-                            type="text">
+                    <input class="half shadow grows" id="form-title" name="title" placeholder="title" required
+                           type="text">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-start">When</label>
-                    <input required class="half shadow grows" id="form-start" name="start"
-                            type="datetime-local">
+                    <input class="half shadow grows" id="form-start" name="start" required
+                           type="datetime-local">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-duration">Duration</label>
-                    <input required class="half shadow grows" id="form-duration" name="duration" placeholder="minutes"
-                            type="number">
+                    <input class="half shadow grows" id="form-duration" name="duration" placeholder="minutes" required
+                           type="number">
                 </div>
                 <div class="spread">
                     <label class="half text-center" for="form-capacity">Capacity</label>
-                    <input required class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity"
-                            type="number">
+                    <input class="half shadow grows" id="form-capacity" name="max_participants" placeholder="capacity"
+                           required
+                           type="number">
                 </div>
                 <input class="button shadow grows" id="send" type="submit" value="CREATE MEETING">
             </fieldset>

@@ -64,7 +64,7 @@
                 title.innerText = meeting.title;
                 date.innerText = luxon.DateTime.fromMillis(meeting.start).toLocaleString(luxon.DateTime.DATE_MED_WITH_WEEKDAY);
                 time.innerText = luxon.DateTime.fromMillis(meeting.start).toLocaleString(luxon.DateTime.TIME_SIMPLE);
-                duration.innerText = String(Math.floor(Number(meeting.duration)/60)) + " hours " + String(Math.floor(Number(meeting.duration)%60)) + " minutes";
+                duration.innerText = String(Math.floor(Number(meeting.duration) / 60)) + " hours " + String(Math.floor(Number(meeting.duration) % 60)) + " minutes";
                 capacity.innerText = meeting.capacity;
             })
         }
@@ -84,7 +84,7 @@
                 title.innerText = meeting.title;
                 date.innerText = luxon.DateTime.fromMillis(meeting.start).toLocaleString(luxon.DateTime.DATE_MED_WITH_WEEKDAY);
                 time.innerText = luxon.DateTime.fromMillis(meeting.start).toLocaleString(luxon.DateTime.TIME_SIMPLE);
-                duration.innerText = String(Math.floor(Number(meeting.duration)/60)) + " hours " + String(Math.floor(Number(meeting.duration)%60)) + " minutes";
+                duration.innerText = String(Math.floor(Number(meeting.duration) / 60)) + " hours " + String(Math.floor(Number(meeting.duration) % 60)) + " minutes";
                 capacity.innerText = meeting.capacity;
                 admin.innerText = meeting.admin.uname;
             })
@@ -305,4 +305,5 @@
     }
 
     reload();
-}11121321321312;
+}
+11121321321312;

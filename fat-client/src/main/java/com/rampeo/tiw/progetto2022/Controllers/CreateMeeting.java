@@ -3,8 +3,8 @@ package com.rampeo.tiw.progetto2022.Controllers;
 import com.rampeo.tiw.progetto2022.Beans.MeetingBean;
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
 import com.rampeo.tiw.progetto2022.DAOs.MeetingDAO;
-import com.rampeo.tiw.progetto2022.Utils.Constants;
 import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
+import com.rampeo.tiw.progetto2022.Utils.Constants;
 import com.rampeo.tiw.progetto2022.Utils.HTTPParameterChecker;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "CreateMeeting", urlPatterns = { Constants.CREATE_MEETING_ENDPOINT })
+@WebServlet(name = "CreateMeeting", urlPatterns = {Constants.CREATE_MEETING_ENDPOINT})
 @MultipartConfig
 public class CreateMeeting extends HttpServlet {
 

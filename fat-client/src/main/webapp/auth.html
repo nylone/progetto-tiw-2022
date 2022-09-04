@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Authentication</title>
 
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="js/auth.js" defer></script>
-  </head>
-  <body class="col">
-    <h1 class="shadow">MEETINGS</h1>
-    <div class="row">
-      <div class="col box shadow grows">
+    <link href="css/style.css" rel="stylesheet"/>
+    <script defer src="js/auth.js"></script>
+</head>
+<body class="col">
+<h1 class="shadow">MEETINGS</h1>
+<div class="row">
+    <div class="col box shadow grows">
         <h3 class="shadow">Sign in</h3>
-        <h5 id="failed-sing-in" class="shadow" hidden>Sign in failed</h5>
-        <form class="col" action="#" id="sign-in-form">
-          <input
-            class="shadow grows"
-            name="email"
-            required
-            type="email"
-            placeholder="e-mail"
-            id="sign-in-email"
-          /><br />
-          <input
-            class="shadow grows"
-            name="pass"
-            required
-            type="password"
-            placeholder="password"
-            id="sign-in-pass"
-          /><br />
-          <input class="button shadow grows" type="submit" value="SIGN IN" />
+        <h5 class="shadow" hidden id="failed-sing-in">Sign in failed</h5>
+        <form action="#" class="col" id="sign-in-form">
+            <input
+                    class="shadow grows"
+                    id="sign-in-email"
+                    name="email"
+                    placeholder="e-mail"
+                    required
+                    type="email"
+            /><br/>
+            <input
+                    class="shadow grows"
+                    id="sign-in-pass"
+                    name="pass"
+                    placeholder="password"
+                    required
+                    type="password"
+            /><br/>
+            <input class="button shadow grows" type="submit" value="SIGN IN"/>
         </form>
-      </div>
-
-      <div class="col box shadow grows">
-        <h3 class="shadow">Sign up</h3>
-                <h5 id="failed-sing-up" class="shadow" hidden>Sign up failed</h5>
-        <form class="col" action="#" id="sign-up-form">
-          <input
-            class="shadow grows"
-            name="email"
-            required
-            type="email"
-            placeholder="e-mail"
-            id="sign-up-email"
-          /><br />
-          <input
-            class="shadow grows"
-            name="uname"
-            required
-            type="text"
-            placeholder="username"
-            id="sign-up-uname"
-          /><br />
-          <input
-            class="shadow grows"
-            name="pass"
-            required
-            type="password"
-            placeholder="password"
-            id="sign-up-pass"
-          /><br />
-          <input
-            class="shadow grows"
-            name="pass-confirm"
-            required
-            type="password"
-            placeholder="confirm password"
-            id="sign-up-confpass"
-          /><br />
-          <input class="button shadow grows" type="submit" value="SIGN UP" />
-        </form>
-      </div>
     </div>
-  </body>
+
+    <div class="col box shadow grows">
+        <h3 class="shadow">Sign up</h3>
+        <h5 class="shadow" hidden id="failed-sing-up">Sign up failed</h5>
+        <form action="#" class="col" id="sign-up-form">
+            <input
+                    class="shadow grows"
+                    id="sign-up-email"
+                    name="email"
+                    placeholder="e-mail"
+                    required
+                    type="email"
+            /><br/>
+            <input
+                    class="shadow grows"
+                    id="sign-up-uname"
+                    name="uname"
+                    placeholder="username"
+                    required
+                    type="text"
+            /><br/>
+            <input
+                    class="shadow grows"
+                    id="sign-up-pass"
+                    name="pass"
+                    placeholder="password"
+                    required
+                    type="password"
+            /><br/>
+            <input
+                    class="shadow grows"
+                    id="sign-up-confpass"
+                    name="pass-confirm"
+                    placeholder="confirm password"
+                    required
+                    type="password"
+            /><br/>
+            <input class="button shadow grows" type="submit" value="SIGN UP"/>
+        </form>
+    </div>
+</div>
+</body>
 </html>

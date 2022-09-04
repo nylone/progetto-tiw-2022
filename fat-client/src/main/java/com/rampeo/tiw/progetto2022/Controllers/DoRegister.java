@@ -37,7 +37,7 @@ public class DoRegister extends HttpServlet {
 
         try (UserDAO userDAO = new UserDAO()) {
             UserBean u;
-            if (userDAO.checkUnique(email)) {
+            if (userDAO.checkUnique(email, uname)) {
                 userDAO.addCredentials(email, pass, uname);
                 u = userDAO.authenticate(email, pass);
                 request.getSession().setAttribute(Constants.USER, u);

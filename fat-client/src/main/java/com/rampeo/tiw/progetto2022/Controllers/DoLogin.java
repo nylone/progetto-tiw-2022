@@ -1,8 +1,8 @@
 package com.rampeo.tiw.progetto2022.Controllers;
 
 import com.rampeo.tiw.progetto2022.Beans.UserBean;
-import com.rampeo.tiw.progetto2022.Utils.Constants;
 import com.rampeo.tiw.progetto2022.DAOs.UserDAO;
+import com.rampeo.tiw.progetto2022.Utils.Constants;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;

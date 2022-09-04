@@ -11,6 +11,7 @@ public class MeetingBean {
     private Integer duration = null;
     private Integer capacity = null;
     private UserBean admin = null;
+    private Collection<Long> invites = null;
 
     public List<Long> getInvites() {
         return invites.stream().toList();
@@ -19,8 +20,6 @@ public class MeetingBean {
     public void setInvites(Collection<Long> invites) {
         this.invites = invites;
     }
-
-    private Collection<Long> invites = null;
 
     public Long getId() {
         return id;

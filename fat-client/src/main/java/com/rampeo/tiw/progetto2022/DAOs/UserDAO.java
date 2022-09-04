@@ -54,10 +54,11 @@ public class UserDAO extends AbstractDAO {
         }
     }
 
-    public boolean checkUnique(String email) throws SQLException {
-        String query = "SELECT  id FROM user  WHERE email=?";
+    public boolean checkUnique(String email, String uname) throws SQLException {
+        String query = "SELECT  id FROM user  WHERE email=? or uname=?";
         try (PreparedStatement pstatement = getConnection().prepareStatement(query)) {
             pstatement.setString(1, email);
+            pstatement.setString(2, uname);
             try (ResultSet result = pstatement.executeQuery()) {
                 return !result.isBeforeFirst();
             }
