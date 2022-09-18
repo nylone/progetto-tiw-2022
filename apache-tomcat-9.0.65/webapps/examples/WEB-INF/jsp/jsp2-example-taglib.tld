@@ -106,19 +106,24 @@
         <description>Reverses the characters in the given String</description>
         <name>reverse</name>
         <function-class>jsp2.examples.el.Functions</function-class>
-        <function-signature>java.lang.String reverse( java.lang.String )</function-signature>
+        <function-signature>java.lang.String reverse( java.lang.String )
+        </function-signature>
     </function>
     <function>
-        <description>Counts the number of vowels (a,e,i,o,u) in the given String</description>
+        <description>Counts the number of vowels (a,e,i,o,u) in the given
+            String
+        </description>
         <name>countVowels</name>
         <function-class>jsp2.examples.el.Functions</function-class>
-        <function-signature>java.lang.String numVowels( java.lang.String )</function-signature>
+        <function-signature>java.lang.String numVowels( java.lang.String )
+        </function-signature>
     </function>
     <function>
         <description>Converts the string to all caps</description>
         <name>caps</name>
         <function-class>jsp2.examples.el.Functions</function-class>
-        <function-signature>java.lang.String caps( java.lang.String )</function-signature>
+        <function-signature>java.lang.String caps( java.lang.String )
+        </function-signature>
     </function>
 </taglib>
 

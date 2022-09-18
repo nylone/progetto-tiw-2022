@@ -141,14 +141,16 @@
         >
         <g style="fill:white; stroke:white;"
         >
-            <rect x="0" y="0" width="2106" style="clip-path:url(#clipPath1); stroke:none;" height="737"
+            <rect x="0" y="0" width="2106"
+                  style="clip-path:url(#clipPath1); stroke:none;" height="737"
             />
         </g
         >
         <g style="text-rendering:geometricPrecision; shape-rendering:crispEdges;"
            transform="scale(1.3333,1.3333) translate(72.4323,19.4001)"
         >
-            <rect x="-62.4323" y="-9.4001" width="1560.4323" style="fill:none; clip-path:url(#clipPath2);" height="533"
+            <rect x="-62.4323" y="-9.4001" width="1560.4323"
+                  style="fill:none; clip-path:url(#clipPath2);" height="533"
             />
             <line x1="27.5759" x2="27.5759" y1="-8.4001"
                   style="clip-path:url(#clipPath2); fill:none; text-rendering:optimizeLegibility; shape-rendering:auto;"
@@ -183,16 +185,20 @@
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-weight:bold; font-family:sans-serif; stroke-linecap:butt;"
         >
-            <line x1="982" x2="982" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
+            <line x1="982" x2="982" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); font-weight:bold; stroke-width:2;"
         >
-            <rect x="927" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="927" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="927" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="927" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -207,16 +213,20 @@
         <g style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-family:sans-serif; stroke-linecap:butt;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="772" x2="772" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
+            <line x1="772" x2="772" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="717" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="717" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="717" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="717" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -231,16 +241,20 @@
         <g style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-family:sans-serif; stroke-linecap:butt;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="562" x2="562" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
+            <line x1="562" x2="562" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="507" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="507" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="507" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="507" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -255,16 +269,20 @@
         <g style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-family:sans-serif; stroke-linecap:butt;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="1192" x2="1192" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
+            <line x1="1192" x2="1192" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="482.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="1137" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="1137" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="1137" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="1137" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -279,16 +297,20 @@
         <g style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-family:sans-serif; stroke-linecap:butt;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="352" x2="352" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="488.5999"
+            <line x1="352" x2="352" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="488.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="297" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="297" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="297" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="297" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -303,16 +325,20 @@
         <g style="text-rendering:optimizeLegibility; stroke-dasharray:12,6; font-family:sans-serif; stroke-linecap:butt;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="142" x2="142" y1="60" style="fill:none; clip-path:url(#clipPath2);" y2="508.5999"
+            <line x1="142" x2="142" y1="60"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="508.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="87" y="30" width="110" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="87" y="30" width="110"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="87" y="30" width="110" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="87" y="30" width="110"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -327,14 +353,20 @@
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="347" y="96.2001" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="377.3998"
-            />
-            <rect x="347" y="96.2001" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="347" y="96.2001" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;"
                   height="377.3998"
             />
-            <rect x="137" y="96.2001" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="397.3998"
+            <rect x="347" y="96.2001" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="377.3998"
             />
-            <rect x="137" y="96.2001" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="137" y="96.2001" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;"
+                  height="397.3998"
+            />
+            <rect x="137" y="96.2001" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="397.3998"
             />
         </g
@@ -358,14 +390,16 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 3 142 3 156 -7 166 -30 166 -30 142"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 3 142 3 156 -7 166 -30 166 -30 142"
             />
             <rect x="-30.4323" y="141.5999" width="1485.4323"
                   style="clip-path:url(#clipPath2); fill:none; text-rendering:geometricPrecision; shape-rendering:crispEdges;"
                   height="326"
             />
             <line x1="-30.4323" x2="1455" y1="377.1309"
-                  style="stroke-linecap:butt; clip-path:url(#clipPath2); fill:none; stroke-dasharray:5,5;" y2="377.1309"
+                  style="stroke-linecap:butt; clip-path:url(#clipPath2); fill:none; stroke-dasharray:5,5;"
+                  y2="377.1309"
             />
         </g
         >
@@ -388,20 +422,25 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="146.9" x2="347.1" y1="96.2001" style="fill:none; clip-path:url(#clipPath2);" y2="96.2001"
+            <line x1="146.9" x2="347.1" y1="96.2001"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="96.2001"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 347 96 336 90 336 103"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 347 96 336 90 336 103"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 347 96 336 90 336 103"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 347 96 336 90 336 103"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="1187" y="106.5999" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="25"
+            <rect x="1187" y="106.5999" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="25"
             />
-            <rect x="1187" y="106.5999" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="1187" y="106.5999" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="25"
             />
         </g
@@ -417,28 +456,35 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="357" x2="1187.1" y1="106.5999" style="fill:none; clip-path:url(#clipPath2);" y2="106.5999"
+            <line x1="357" x2="1187.1" y1="106.5999"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="106.5999"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 1187 107 1176 100 1176 113"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 1187 107 1176 100 1176 113"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 1187 107 1176 100 1176 113"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 1187 107 1176 100 1176 113"
             />
             <line x1="1187.1" x2="357" y1="131.5999"
                   style="stroke-linecap:butt; clip-path:url(#clipPath2); fill:none; stroke-dasharray:10,5;"
                   y2="131.5999"
             />
-            <line x1="357" x2="367.3923" y1="131.5999" style="fill:none; clip-path:url(#clipPath2);" y2="125.5999"
+            <line x1="357" x2="367.3923" y1="131.5999"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="125.5999"
             />
-            <line x1="357" x2="367.3923" y1="131.5999" style="fill:none; clip-path:url(#clipPath2);" y2="137.5999"
+            <line x1="357" x2="367.3923" y1="131.5999"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="137.5999"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="1410" y="428.5999" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="25"
+            <rect x="1410" y="428.5999" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="25"
             />
-            <rect x="1410" y="428.5999" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="1410" y="428.5999" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="25"
             />
         </g
@@ -454,20 +500,26 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="357" x2="1410.1" y1="428.5999" style="fill:none; clip-path:url(#clipPath2);" y2="428.5999"
+            <line x1="357" x2="1410.1" y1="428.5999"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="428.5999"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 1410 429 1399 422 1399 435"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 1410 429 1399 422 1399 435"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 1410 429 1399 422 1399 435"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 1410 429 1399 422 1399 435"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="557" y="193.6002" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="198.6002"
+            <rect x="557" y="193.6002" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;"
+                  height="198.6002"
             />
-            <rect x="557" y="193.6002" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="557" y="193.6002" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="198.6002"
             />
         </g
@@ -483,20 +535,26 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="357" x2="557.1" y1="193.6002" style="fill:none; clip-path:url(#clipPath2);" y2="193.6002"
+            <line x1="357" x2="557.1" y1="193.6002"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="193.6002"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 557 194 546 187 546 200"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 557 194 546 187 546 200"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 557 194 546 187 546 200"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 557 194 546 187 546 200"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="767" y="229.8002" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="142.4001"
+            <rect x="767" y="229.8002" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;"
+                  height="142.4001"
             />
-            <rect x="767" y="229.8002" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="767" y="229.8002" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="142.4001"
             />
         </g
@@ -512,20 +570,25 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="567" x2="767.1" y1="229.8002" style="fill:none; clip-path:url(#clipPath2);" y2="229.8002"
+            <line x1="567" x2="767.1" y1="229.8002"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="229.8002"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 767 230 756 223 756 236"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 767 230 756 223 756 236"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 767 230 756 223 756 236"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 767 230 756 223 756 236"
             />
         </g
         >
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="1187" y="266.0003" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="25"
+            <rect x="1187" y="266.0003" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="25"
             />
-            <rect x="1187" y="266.0003" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="1187" y="266.0003" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="25"
             />
         </g
@@ -541,11 +604,14 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="777" x2="1187.1" y1="266.0003" style="fill:none; clip-path:url(#clipPath2);" y2="266.0003"
+            <line x1="777" x2="1187.1" y1="266.0003"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="266.0003"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 1187 266 1176 260 1176 273"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 1187 266 1176 260 1176 273"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 1187 266 1176 260 1176 273"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 1187 266 1176 260 1176 273"
             />
             <line x1="1415" x2="1415" y1="60"
                   style="stroke-linecap:butt; clip-path:url(#clipPath2); fill:none; stroke-dasharray:12,6;"
@@ -556,9 +622,12 @@
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:rgb(255,255,204); text-rendering:geometricPrecision; font-family:sans-serif; shape-rendering:crispEdges; stroke:rgb(255,255,204); stroke-width:2;"
         >
-            <rect x="1347" y="30" width="136" style="clip-path:url(#clipPath2); stroke:none;" height="30"
+            <rect x="1347" y="30" width="136"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="30"
             />
-            <rect x="1347" y="30" width="136" style="clip-path:url(#clipPath2); fill:none; stroke:black;" height="30"
+            <rect x="1347" y="30" width="136"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+                  height="30"
             />
         </g
         >
@@ -573,9 +642,11 @@
         <g transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
            style="fill:white; text-rendering:geometricPrecision; shape-rendering:crispEdges; font-family:sans-serif; stroke:white;"
         >
-            <rect x="1410" y="320.5999" width="10" style="clip-path:url(#clipPath2); stroke:none;" height="25"
+            <rect x="1410" y="320.5999" width="10"
+                  style="clip-path:url(#clipPath2); stroke:none;" height="25"
             />
-            <rect x="1410" y="320.5999" width="10" style="clip-path:url(#clipPath2); fill:none; stroke:black;"
+            <rect x="1410" y="320.5999" width="10"
+                  style="clip-path:url(#clipPath2); fill:none; stroke:black;"
                   height="25"
             />
         </g
@@ -591,11 +662,14 @@
         <g style="font-family:sans-serif; text-rendering:optimizeLegibility;"
            transform="matrix(1.3333,0,0,1.3333,96.5763,25.8668)"
         >
-            <line x1="777" x2="1410.1" y1="320.5999" style="fill:none; clip-path:url(#clipPath2);" y2="320.5999"
+            <line x1="777" x2="1410.1" y1="320.5999"
+                  style="fill:none; clip-path:url(#clipPath2);" y2="320.5999"
             />
-            <polygon style="clip-path:url(#clipPath2); stroke:none;" points=" 1410 321 1399 314 1399 327"
+            <polygon style="clip-path:url(#clipPath2); stroke:none;"
+                     points=" 1410 321 1399 314 1399 327"
             />
-            <polygon style="fill:none; clip-path:url(#clipPath2);" points=" 1410 321 1399 314 1399 327"
+            <polygon style="fill:none; clip-path:url(#clipPath2);"
+                     points=" 1410 321 1399 314 1399 327"
             />
         </g
         >

@@ -27,7 +27,9 @@
         &lt;% scripting %&gt; elements
     </li>
     <li>Uses &lt;el-ignored&gt; true to disable ${EL} elements</li>
-    <li>Uses &lt;page-encoding&gt; ISO-8859-1 to set the page encoding (though this is the default anyway)</li>
+    <li>Uses &lt;page-encoding&gt; ISO-8859-1 to set the page encoding (though
+        this is the default anyway)
+    </li>
 </ul>
 There are various other configuration options that can be used.
 

@@ -112,7 +112,8 @@
 
     <servlet>
         <servlet-name>default</servlet-name>
-        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet
+        </servlet-class>
         <init-param>
             <param-name>debug</param-name>
             <param-value>0</param-value>
@@ -754,7 +755,8 @@
     </mime-mapping>
     <mime-mapping>
         <extension>air</extension>
-        <mime-type>application/vnd.adobe.air-application-installer-package+zip</mime-type>
+        <mime-type>application/vnd.adobe.air-application-installer-package+zip
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ait</extension>
@@ -1102,7 +1104,8 @@
     </mime-mapping>
     <mime-mapping>
         <extension>cii</extension>
-        <mime-type>application/vnd.anser-web-certificate-issue-initiation</mime-type>
+        <mime-type>application/vnd.anser-web-certificate-issue-initiation
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>cil</extension>
@@ -1370,7 +1373,9 @@
     </mime-mapping>
     <mime-mapping>
         <extension>docx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>dot</extension>
@@ -1382,7 +1387,9 @@
     </mime-mapping>
     <mime-mapping>
         <extension>dotx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.template</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.wordprocessingml.template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>dp</extension>
@@ -1706,7 +1713,8 @@
     </mime-mapping>
     <mime-mapping>
         <extension>fti</extension>
-        <mime-type>application/vnd.anser-web-funds-transfer-initiation</mime-type>
+        <mime-type>application/vnd.anser-web-funds-transfer-initiation
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>fvt</extension>
@@ -2222,11 +2230,13 @@
     </mime-mapping>
     <mime-mapping>
         <extension>lbd</extension>
-        <mime-type>application/vnd.llamagraphics.life-balance.desktop</mime-type>
+        <mime-type>application/vnd.llamagraphics.life-balance.desktop
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>lbe</extension>
-        <mime-type>application/vnd.llamagraphics.life-balance.exchange+xml</mime-type>
+        <mime-type>application/vnd.llamagraphics.life-balance.exchange+xml
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>les</extension>
@@ -2829,7 +2839,8 @@
     </mime-mapping>
     <mime-mapping>
         <extension>odft</extension>
-        <mime-type>application/vnd.oasis.opendocument.formula-template</mime-type>
+        <mime-type>application/vnd.oasis.opendocument.formula-template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <!-- OpenDocument Drawing -->
@@ -2933,7 +2944,8 @@
     <mime-mapping>
         <!-- OpenDocument Drawing Template -->
         <extension>otg</extension>
-        <mime-type>application/vnd.oasis.opendocument.graphics-template</mime-type>
+        <mime-type>application/vnd.oasis.opendocument.graphics-template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <!-- HTML Document Template -->
@@ -2947,12 +2959,14 @@
     <mime-mapping>
         <!-- OpenDocument Presentation Template -->
         <extension>otp</extension>
-        <mime-type>application/vnd.oasis.opendocument.presentation-template</mime-type>
+        <mime-type>application/vnd.oasis.opendocument.presentation-template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <!-- OpenDocument Spreadsheet Template -->
         <extension>ots</extension>
-        <mime-type>application/vnd.oasis.opendocument.spreadsheet-template</mime-type>
+        <mime-type>application/vnd.oasis.opendocument.spreadsheet-template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <!-- OpenDocument Text Template -->
@@ -3149,15 +3163,19 @@
     </mime-mapping>
     <mime-mapping>
         <extension>potm</extension>
-        <mime-type>application/vnd.ms-powerpoint.template.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-powerpoint.template.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>potx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.presentationml.template</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.presentationml.template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ppam</extension>
-        <mime-type>application/vnd.ms-powerpoint.addin.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-powerpoint.addin.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ppd</extension>
@@ -3173,11 +3191,14 @@
     </mime-mapping>
     <mime-mapping>
         <extension>ppsm</extension>
-        <mime-type>application/vnd.ms-powerpoint.slideshow.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-powerpoint.slideshow.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ppsx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.presentationml.slideshow</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.presentationml.slideshow
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ppt</extension>
@@ -3185,11 +3206,14 @@
     </mime-mapping>
     <mime-mapping>
         <extension>pptm</extension>
-        <mime-type>application/vnd.ms-powerpoint.presentation.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-powerpoint.presentation.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>pptx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.presentationml.presentation</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.presentationml.presentation
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>pqa</extension>
@@ -3631,11 +3655,14 @@
     </mime-mapping>
     <mime-mapping>
         <extension>sldm</extension>
-        <mime-type>application/vnd.ms-powerpoint.slide.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-powerpoint.slide.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>sldx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.presentationml.slide</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.presentationml.slide
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>slt</extension>
@@ -4540,7 +4567,8 @@
     </mime-mapping>
     <mime-mapping>
         <extension>xlsb</extension>
-        <mime-type>application/vnd.ms-excel.sheet.binary.macroenabled.12</mime-type>
+        <mime-type>application/vnd.ms-excel.sheet.binary.macroenabled.12
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>xlsm</extension>
@@ -4548,7 +4576,9 @@
     </mime-mapping>
     <mime-mapping>
         <extension>xlsx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>xlt</extension>
@@ -4560,7 +4590,9 @@
     </mime-mapping>
     <mime-mapping>
         <extension>xltx</extension>
-        <mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.template</mime-type>
+        <mime-type>
+            application/vnd.openxmlformats-officedocument.spreadsheetml.template
+        </mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>xlw</extension>

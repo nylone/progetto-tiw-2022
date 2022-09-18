@@ -60,7 +60,8 @@
                     </A>
                 </TD>
                 <TD BGCOLOR=<%= entr.getColor() %>>
-                    <% out.print(util.HTMLFilter.filter(entr.getDescription())); %>
+                    <%
+                        out.print(util.HTMLFilter.filter(entr.getDescription())); %>
                 </TD>
             </TR>
             <%
@@ -73,7 +74,8 @@
     <!-- footer -->
     <TABLE WIDTH=60% BGCOLOR=yellow CELLPADDING=15>
         <TR>
-            <TD ALIGN=CENTER><% out.print(util.HTMLFilter.filter(table.getName())); %> :
+            <TD ALIGN=CENTER><%
+                out.print(util.HTMLFilter.filter(table.getName())); %> :
                 <% out.print(util.HTMLFilter.filter(table.getEmail())); %></TD>
         </TR>
     </TABLE>

@@ -47,11 +47,14 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <head>
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
     <meta http-equiv="pragma" content="no-cache"/><!-- HTTP 1.0 -->
-    <meta http-equiv="cache-control" content="no-cache,must-revalidate"/><!-- HTTP 1.1 -->
-    <meta http-equiv="expires" content="0"/><!-- 0 is an invalid value and should be treated as 'now' -->
+    <meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="expires" content="0"/>
+    <!-- 0 is an invalid value and should be treated as 'now' -->
     <meta http-equiv="content-language" content="en"/>
     <meta name="author" content="Cedrik LIME"/>
-    <meta name="copyright" content="copyright 2005-2022 the Apache Software Foundation"/>
+    <meta name="copyright"
+          content="copyright 2005-2022 the Apache Software Foundation"/>
     <meta name="robots" content="noindex,nofollow,noarchive"/>
     <title>Sessions Administration: details for <%= currentSessionId %>
     </title>
@@ -139,7 +142,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
             ++nAttributes;
         }
     %>
-    <caption style="font-variant: small-caps;"><%= JspHelper.formatNumber(nAttributes) %> attributes</caption>
+    <caption
+            style="font-variant: small-caps;"><%= JspHelper.formatNumber(nAttributes) %>
+        attributes
+    </caption>
     <thead>
     <tr>
         <th>Remove Attribute</th>
@@ -163,9 +169,12 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         <td align="center">
             <form method="post" action="<%= submitUrl %>">
                 <div>
-                    <input type="hidden" name="action" value="removeSessionAttribute"/>
-                    <input type="hidden" name="sessionId" value="<%= currentSessionId %>"/>
-                    <input type="hidden" name="attributeName" value="<%= JspHelper.escapeXml(attributeName) %>"/>
+                    <input type="hidden" name="action"
+                           value="removeSessionAttribute"/>
+                    <input type="hidden" name="sessionId"
+                           value="<%= currentSessionId %>"/>
+                    <input type="hidden" name="attributeName"
+                           value="<%= JspHelper.escapeXml(attributeName) %>"/>
                     <%
                         if ("Primary".equals(request.getParameter("sessionType"))) {
                     %>
@@ -181,7 +190,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         </td>
         <td><%= JspHelper.escapeXml(attributeName) %>
         </td>
-        <td><% Object attributeValue = currentHttpSession.getAttribute(attributeName); %><span
+        <td><%
+            Object attributeValue = currentHttpSession.getAttribute(attributeName); %><span
                 title="<%= attributeValue == null ? "" : attributeValue.getClass().toString() %>"><%= JspHelper.escapeXml(attributeValue) %></span>
         </td>
     </tr>

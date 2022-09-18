@@ -41,7 +41,8 @@
 
     <filter>
         <filter-name>Request Dumper Filter</filter-name>
-        <filter-class>org.apache.catalina.filters.RequestDumperFilter</filter-class>
+        <filter-class>org.apache.catalina.filters.RequestDumperFilter
+        </filter-class>
     </filter>
 
     <filter>
@@ -70,7 +71,8 @@
     <!-- and X-XSS-Protection as they are page specific.                     -->
     <filter>
         <filter-name>HTTP header security filter</filter-name>
-        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter
+        </filter-class>
         <async-supported>true</async-supported>
         <init-param>
             <param-name>hstsEnabled</param-name>
@@ -127,7 +129,8 @@
     </servlet>
     <servlet>
         <servlet-name>CompressionFilterTestServlet</servlet-name>
-        <servlet-class>compressionFilters.CompressionFilterTestServlet</servlet-class>
+        <servlet-class>compressionFilters.CompressionFilterTestServlet
+        </servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HelloWorldExample</servlet-name>
@@ -232,7 +235,8 @@
     <security-constraint>
         <display-name>Example Security Constraint - part 1</display-name>
         <web-resource-collection>
-            <web-resource-name>Protected Area - Allow methods</web-resource-name>
+            <web-resource-name>Protected Area - Allow methods
+            </web-resource-name>
             <!-- Define the context-relative URL(s) to be protected -->
             <url-pattern>/jsp/security/protected/*</url-pattern>
             <!-- If you list http methods, only those methods are protected so -->
@@ -412,7 +416,8 @@
 
     <!-- Websocket examples -->
     <listener>
-        <listener-class>websocket.drawboard.DrawboardContextListener</listener-class>
+        <listener-class>websocket.drawboard.DrawboardContextListener
+        </listener-class>
     </listener>
 
 </web-app>

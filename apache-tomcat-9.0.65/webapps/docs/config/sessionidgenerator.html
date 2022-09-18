@@ -3,19 +3,24 @@
 <head>
     <META content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css">
-    <title>Apache Tomcat 9 Configuration Reference (9.0.65) - The SessionIdGenerator Component</title></head>
+    <title>Apache Tomcat 9 Configuration Reference (9.0.65) - The
+        SessionIdGenerator Component</title></head>
 <body>
 <div id="wrapper">
     <header>
         <div id="header">
             <div>
                 <div>
-                    <div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home"
-                                                                                        src="../images/tomcat.png"></a>
+                    <div class="logo noPrint"><a
+                            href="https://tomcat.apache.org/"><img
+                            alt="Tomcat Home"
+                            src="../images/tomcat.png"></a>
                     </div>
                     <div style="height: 1px;"></div>
-                    <div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img
-                            alt="The Apache Software Foundation" src="../images/asf-logo.svg"
+                    <div class="asfLogo noPrint"><a
+                            href="https://www.apache.org/" target="_blank"><img
+                            alt="The Apache Software Foundation"
+                            src="../images/asf-logo.svg"
                             style="width: 266px; height: 83px;"></a></div>
                     <h1>Apache Tomcat 9 Configuration Reference</h1>
                     <div class="versionInfo">
@@ -36,9 +41,13 @@
                         <div><h2>Links</h2>
                             <ul>
                                 <li><a href="../index.html">Docs Home</a></li>
-                                <li><a href="index.html">Config Ref. Home</a></li>
-                                <li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/FAQ">FAQ</a></li>
-                                <li><a href="#comments_section">User Comments</a></li>
+                                <li><a href="index.html">Config Ref. Home</a>
+                                </li>
+                                <li>
+                                    <a href="https://cwiki.apache.org/confluence/display/TOMCAT/FAQ">FAQ</a>
+                                </li>
+                                <li><a href="#comments_section">User
+                                    Comments</a></li>
                             </ul>
                         </div>
                         <div><h2>Top Level Elements</h2>
@@ -69,32 +78,48 @@
                         </div>
                         <div><h2>Nested Components</h2>
                             <ul>
-                                <li><a href="cookie-processor.html">CookieProcessor</a></li>
-                                <li><a href="credentialhandler.html">CredentialHandler</a></li>
-                                <li><a href="globalresources.html">Global Resources</a></li>
-                                <li><a href="jar-scanner.html">JarScanner</a></li>
-                                <li><a href="jar-scan-filter.html">JarScanFilter</a></li>
+                                <li><a href="cookie-processor.html">CookieProcessor</a>
+                                </li>
+                                <li><a href="credentialhandler.html">CredentialHandler</a>
+                                </li>
+                                <li><a href="globalresources.html">Global
+                                    Resources</a></li>
+                                <li><a href="jar-scanner.html">JarScanner</a>
+                                </li>
+                                <li>
+                                    <a href="jar-scan-filter.html">JarScanFilter</a>
+                                </li>
                                 <li><a href="listeners.html">Listeners</a></li>
                                 <li><a href="loader.html">Loader</a></li>
                                 <li><a href="manager.html">Manager</a></li>
                                 <li><a href="realm.html">Realm</a></li>
                                 <li><a href="resources.html">Resources</a></li>
-                                <li><a href="sessionidgenerator.html">SessionIdGenerator</a></li>
+                                <li><a href="sessionidgenerator.html">SessionIdGenerator</a>
+                                </li>
                                 <li><a href="valve.html">Valve</a></li>
                             </ul>
                         </div>
                         <div><h2>Cluster Elements</h2>
                             <ul>
                                 <li><a href="cluster.html">Cluster</a></li>
-                                <li><a href="cluster-manager.html">Manager</a></li>
-                                <li><a href="cluster-channel.html">Channel</a></li>
-                                <li><a href="cluster-membership.html">Channel/Membership</a></li>
-                                <li><a href="cluster-sender.html">Channel/Sender</a></li>
-                                <li><a href="cluster-receiver.html">Channel/Receiver</a></li>
-                                <li><a href="cluster-interceptor.html">Channel/Interceptor</a></li>
+                                <li><a href="cluster-manager.html">Manager</a>
+                                </li>
+                                <li><a href="cluster-channel.html">Channel</a>
+                                </li>
+                                <li><a href="cluster-membership.html">Channel/Membership</a>
+                                </li>
+                                <li>
+                                    <a href="cluster-sender.html">Channel/Sender</a>
+                                </li>
+                                <li><a href="cluster-receiver.html">Channel/Receiver</a>
+                                </li>
+                                <li><a href="cluster-interceptor.html">Channel/Interceptor</a>
+                                </li>
                                 <li><a href="cluster-valve.html">Valve</a></li>
-                                <li><a href="cluster-deployer.html">Deployer</a></li>
-                                <li><a href="cluster-listener.html">ClusterListener</a></li>
+                                <li><a href="cluster-deployer.html">Deployer</a>
+                                </li>
+                                <li><a href="cluster-listener.html">ClusterListener</a>
+                                </li>
                             </ul>
                         </div>
                         <div><h2>web.xml</h2>
@@ -104,7 +129,8 @@
                         </div>
                         <div><h2>Other</h2>
                             <ul>
-                                <li><a href="systemprops.html">System properties</a></li>
+                                <li><a href="systemprops.html">System
+                                    properties</a></li>
                                 <li><a href="jaspic.html">JASPIC</a></li>
                             </ul>
                         </div>
@@ -119,8 +145,10 @@
                             <li><a href="#Introduction">Introduction</a></li>
                             <li><a href="#Attributes">Attributes</a>
                                 <ol>
-                                    <li><a href="#Common_Attributes">Common Attributes</a></li>
-                                    <li><a href="#Standard_Implementation">Standard Implementation</a></li>
+                                    <li><a href="#Common_Attributes">Common
+                                        Attributes</a></li>
+                                    <li><a href="#Standard_Implementation">Standard
+                                        Implementation</a></li>
                                 </ol>
                             </li>
                         </ul>
@@ -128,22 +156,28 @@
                     <h3 id="Introduction">Introduction</h3>
                     <div class="text">
 
-                        <p>The <strong>SessionIdGenerator</strong> element represents the <em>session
-                            id generator</em> that will be used to create session ids used by
+                        <p>The <strong>SessionIdGenerator</strong> element
+                            represents the <em>session
+                                id generator</em> that will be used to create
+                            session ids used by
                             web application HTTP sessions.</p>
 
                         <p>A SessionIdGenerator element MAY be nested inside a
-                            <a href="manager.html">Manager</a> component. If it is not included,
-                            a default SessionIdGenerator configuration will be created automatically, which
+                            <a href="manager.html">Manager</a> component. If it
+                            is not included,
+                            a default SessionIdGenerator configuration will be
+                            created automatically, which
                             is sufficient for most requirements, &mdash; see
-                            <em>Standard SessionIdGenerator Implementation</em> below for the details
+                            <em>Standard SessionIdGenerator Implementation</em>
+                            below for the details
                             of this configuration.</p>
 
                     </div>
                     <h3 id="Attributes">Attributes</h3>
                     <div class="text">
 
-                        <div class="subsection"><h4 id="Common_Attributes">Common Attributes</h4>
+                        <div class="subsection"><h4 id="Common_Attributes">
+                            Common Attributes</h4>
                             <div class="text">
 
                                 <p>All implementations of <strong>SessionIdGenerator</strong>
@@ -159,36 +193,58 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td><code class="attributeName">className</code></td>
+                                        <td><code class="attributeName">className</code>
+                                        </td>
                                         <td>
-                                            <p>Java class name of the implementation to use. This class must
+                                            <p>Java class name of the
+                                                implementation to use. This
+                                                class must
                                                 implement the <code>org.apache.catalina.SessionIdGenerator</code>
                                                 interface.
-                                                If not specified, the standard value (defined below) will be used.</p>
+                                                If not specified, the standard
+                                                value (defined below) will be
+                                                used.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><code class="attributeName">jvmRoute</code></td>
+                                        <td><code
+                                                class="attributeName">jvmRoute</code>
+                                        </td>
                                         <td>
-                                            <p>A routing identifier for this Tomcat instance. It will be added
-                                                to the session id to allow for stateless stickyness routing by
-                                                load balancers. The details on how the <code>jvmRoute</code>
-                                                will be included in the id are implementation dependent.
-                                                See <a href="#Standard_Implementation">Standard Implementation</a>
+                                            <p>A routing identifier for this
+                                                Tomcat instance. It will be
+                                                added
+                                                to the session id to allow for
+                                                stateless stickyness routing by
+                                                load balancers. The details on
+                                                how the <code>jvmRoute</code>
+                                                will be included in the id are
+                                                implementation dependent.
+                                                See
+                                                <a href="#Standard_Implementation">Standard
+                                                    Implementation</a>
                                                 for the default behavior.</p>
 
-                                            <p><strong>NOTE</strong> - The value for this property is inherited
-                                                automatically from the <code>jvmRoute</code> attribute of the
-                                                <a href="engine.html">Engine</a> element.</p>
+                                            <p><strong>NOTE</strong> - The value
+                                                for this property is inherited
+                                                automatically from the <code>jvmRoute</code>
+                                                attribute of the
+                                                <a href="engine.html">Engine</a>
+                                                element.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><code class="attributeName">sessionIdLength</code></td>
+                                        <td><code class="attributeName">sessionIdLength</code>
+                                        </td>
                                         <td>
-                                            <p>The length of session ids created by this SessionIdGenerator.
+                                            <p>The length of session ids created
+                                                by this SessionIdGenerator.
                                                 The details on how the <code>sessionIdLength</code>
-                                                influences the session id length are implementation dependent.
-                                                See <a href="#Standard_Implementation">Standard Implementation</a>
+                                                influences the session id length
+                                                are implementation dependent.
+                                                See
+                                                <a href="#Standard_Implementation">Standard
+                                                    Implementation</a>
                                                 for the default behavior.</p>
                                         </td>
                                     </tr>
@@ -198,15 +254,20 @@
                         </div>
 
 
-                        <div class="subsection"><h4 id="Standard_Implementation">Standard Implementation</h4>
+                        <div class="subsection"><h4
+                                id="Standard_Implementation">Standard
+                            Implementation</h4>
                             <div class="text">
 
-                                <p>Tomcat provides a standard implementations of <strong>SessionIdGenerator</strong>
+                                <p>Tomcat provides a standard implementations of
+                                    <strong>SessionIdGenerator</strong>
                                     for use.</p>
 
-                                <h3>Standard SessionIdGenerator Implementation</h3>
+                                <h3>Standard SessionIdGenerator
+                                    Implementation</h3>
 
-                                <p>The standard implementation of <strong>SessionIdGenerator</strong> is
+                                <p>The standard implementation of <strong>SessionIdGenerator</strong>
+                                    is
                                     <strong>org.apache.catalina.util.StandardSessionIdGenerator</strong>.
                                     It supports the following attributes:</p>
 
@@ -220,22 +281,36 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td><code class="attributeName">jvmRoute</code></td>
+                                        <td><code
+                                                class="attributeName">jvmRoute</code>
+                                        </td>
                                         <td>
-                                            <p>A routing identifier for this Tomcat instance. It will be added
-                                                to the end of the session id separated by a ".".</p>
+                                            <p>A routing identifier for this
+                                                Tomcat instance. It will be
+                                                added
+                                                to the end of the session id
+                                                separated by a ".".</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><code class="attributeName">sessionIdLength</code></td>
+                                        <td><code class="attributeName">sessionIdLength</code>
+                                        </td>
                                         <td>
-                                            <p>The length of session ids created by this SessionIdGenerator.
-                                                More precisely the session id length is twice the value of
-                                                <code>sessionIdLength</code> plus the length of the trailing
-                                                <code>jvmRoute</code> if given. The factor 2 is because
-                                                the session id is constructed using <code>sessionIdLength</code>
-                                                random bytes, each byte being encoded in two hex characters
-                                                in the actual id. The default value is 16.</p>
+                                            <p>The length of session ids created
+                                                by this SessionIdGenerator.
+                                                More precisely the session id
+                                                length is twice the value of
+                                                <code>sessionIdLength</code>
+                                                plus the length of the trailing
+                                                <code>jvmRoute</code> if given.
+                                                The factor 2 is because
+                                                the session id is constructed
+                                                using
+                                                <code>sessionIdLength</code>
+                                                random bytes, each byte being
+                                                encoded in two hex characters
+                                                in the actual id. The default
+                                                value is 16.</p>
                                         </td>
                                     </tr>
                                 </table>

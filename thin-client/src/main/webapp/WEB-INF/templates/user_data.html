@@ -6,9 +6,11 @@
 </head>
 <body>
 <div class="container-col">
-    <form class="container-col border" data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}"
+    <form class="container-col border"
+          data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}"
           method="post">
-        <input class="container-child button" id="logout" type="submit" value="click here to log out">
+        <input class="container-child button" id="logout" type="submit"
+               value="click here to log out">
     </form>
     <div class="container-col border">
         <h3 class="container-child"
@@ -17,33 +19,45 @@
             <div class="container-row">
                 <label class="split-half" data-th-text="#{info.meeting.title}"
                        for="title">Title</label>
-                <input class="split-half" data-th-value="${session.meeting_creation.getMeetingBean().getTitle()}" disabled
+                <input class="split-half"
+                       data-th-value="${session.meeting_creation.getMeetingBean().getTitle()}"
+                       disabled
                        id="title"
                        type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" data-th-text="#{info.meeting.date}"
                        for="date">Meeting date</label>
-                <input class="split-half" data-th-value="${{session.meeting_creation.getMeetingBean().getDate()}}" disabled
+                <input class="split-half"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getDate()}}"
+                       disabled
                        id="date"
                        type="text">
             </div>
             <div class="container-row">
                 <label class="split-half" data-th-text="#{info.meeting.time}"
                        for="time">Meeting time</label>
-                <input class="split-half" data-th-value="${{session.meeting_creation.getMeetingBean().getTime()}}" disabled
+                <input class="split-half"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getTime()}}"
+                       disabled
                        id="time" type="text">
             </div>
             <div class="container-row">
-                <label class="split-half" data-th-text="#{info.meeting.duration}"
+                <label class="split-half"
+                       data-th-text="#{info.meeting.duration}"
                        for="duration">Meeting duration</label>
-                <input class="split-half" data-th-value="${{session.meeting_creation.getMeetingBean().getDuration()}}" disabled
+                <input class="split-half"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getDuration()}}"
+                       disabled
                        id="duration" type="text">
             </div>
             <div class="container-row">
-                <label class="split-half" data-th-text="#{info.meeting.max_participants}"
+                <label class="split-half"
+                       data-th-text="#{info.meeting.max_participants}"
                        for="max_participants">Max participants</label>
-                <input class="split-half" data-th-value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}" disabled
+                <input class="split-half"
+                       data-th-value="${{session.meeting_creation.getMeetingBean().getMaxParticipants()}}"
+                       disabled
                        id="max_participants"
                        type="text">
             </div>
@@ -54,7 +68,8 @@
         <h3 class="container-child"
             data-th-text="#{users.title}">Users</h3>
         <form class="container-col"
-              data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@COMPLETE_MEETING}" method="post">
+              data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@COMPLETE_MEETING}"
+              method="post">
             <table class="container-child">
                 <thead>
                 <tr>
@@ -64,24 +79,29 @@
                 </thead>
                 <tbody data-th-remove="all-but-first">
                 <tr data-th-each="user : ${#vars.users}">
-                    <td><input data-th-checked="${session.meeting_creation.getSelected().contains(user.getId())}" data-th-id="${user.getId()}"
-                               data-th-value="${user.getId()}"
-                               id="checkbox"
-                               name="invite"
-                               type="checkbox">
+                    <td><input
+                            data-th-checked="${session.meeting_creation.getSelected().contains(user.getId())}"
+                            data-th-id="${user.getId()}"
+                            data-th-value="${user.getId()}"
+                            id="checkbox"
+                            name="invite"
+                            type="checkbox">
                     </td>
-                    <td><label data-th-for="${user.getId()}" data-th-text="${user.getUname()}"
+                    <td><label data-th-for="${user.getId()}"
+                               data-th-text="${user.getUname()}"
                                for="checkbox"
                                style="text-align: start">E-MAIL</label></td>
                 </tr>
                 </tbody>
             </table>
             <div class="container-row">
-                <input class="container-child button" id="create" type="submit" value="create">
+                <input class="container-child button" id="create" type="submit"
+                       value="create">
             </div>
         </form>
     </div>
-    <div class="container-col border" data-th-replace="~{errors :: error-handler}"></div>
+    <div class="container-col border"
+         data-th-replace="~{errors :: error-handler}"></div>
 </div>
 </body>
 </html>

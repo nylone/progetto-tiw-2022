@@ -25,11 +25,15 @@
     <Listener className="org.apache.catalina.security.SecurityListener" />
     -->
     <!-- APR library loader. Documentation at /docs/apr.html -->
-    <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
+    <Listener className="org.apache.catalina.core.AprLifecycleListener"
+              SSLEngine="on"/>
     <!-- Prevent memory leaks due to use of particular java/javax APIs-->
-    <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
-    <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
-    <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+    <Listener
+            className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+    <Listener
+            className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+    <Listener
+            className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
 
     <!-- Global JNDI resources
          Documentation at /docs/jndi-resources-howto.html
@@ -160,7 +164,8 @@
                 <!-- Access log processes all example.
                      Documentation at: /docs/config/valve.html
                      Note: The pattern used is equivalent to using pattern="common" -->
-                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                <Valve className="org.apache.catalina.valves.AccessLogValve"
+                       directory="logs"
                        prefix="localhost_access_log" suffix=".txt"
                        pattern="%h %l %u %t &quot;%r&quot; %s %b"/>
 

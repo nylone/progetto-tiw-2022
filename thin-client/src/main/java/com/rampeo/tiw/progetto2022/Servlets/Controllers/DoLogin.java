@@ -34,7 +34,8 @@ public class DoLogin extends ThymeleafHTTPServlet {
         UserBean u;
         try (UserDAO userDAO = new UserDAO()) {
             u = userDAO.authenticate(email, pwd);
-        } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
+        } catch (SQLException | NoSuchAlgorithmException |
+                 InvalidKeySpecException e) {
             response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
                     .toString());

@@ -863,7 +863,8 @@
 </head>
 <body>
 <div class="noscript">
-    <div style="color: #ff0000; font-size: 16pt;">Seems your browser doesn't support JavaScript! Websockets rely on
+    <div style="color: #ff0000; font-size: 16pt;">Seems your browser doesn't
+        support JavaScript! Websockets rely on
         JavaScript being enabled. Please enable
         JavaScript and reload this page!
     </div>
@@ -877,29 +878,39 @@
 >About Drawboard WebSocket Example</h1>
 <div id="expandContent">
     <p>
-        This drawboard is a page where you can draw with your mouse or touch input
+        This drawboard is a page where you can draw with your mouse or touch
+        input
         (using different colors) and everybody else which has the page open will
         <em>immediately</em> see what you are drawing.<br/>
-        If someone opens the page later, they will get the current room image (so they
+        If someone opens the page later, they will get the current room image
+        (so they
         can see what was already drawn by other people).
     </p>
     <p>
-        It uses asynchronous sending of messages so that it doesn't need separate threads
+        It uses asynchronous sending of messages so that it doesn't need
+        separate threads
         for each client to send messages.<br/>
-        Each "Room" (where the drawing happens) uses a ReentrantLock to synchronize access
+        Each "Room" (where the drawing happens) uses a ReentrantLock to
+        synchronize access
         (currently, only a single Room is implemented).
     </p>
     <p>
-        When you open the page, first you will receive a binary websocket message containing
-        the current room image as PNG image. After that, you will receive string messages
+        When you open the page, first you will receive a binary websocket
+        message containing
+        the current room image as PNG image. After that, you will receive string
+        messages
         that contain the drawing actions (line from x1,y1 to x2,y2).<br/>
-        <small>Note that it currently only uses simple string messages instead of JSON because
+        <small>Note that it currently only uses simple string messages instead
+            of JSON because
             I did not want to introduce a dependency on a JSON lib.</small>
     </p>
     <p>
-        It uses synchronization mechanisms to ensure that the final image will look the same
-        for every user, regardless of what their network latency/speed is – e.g. if two user
-        draw at the same time on the same place, the server will decide which line was the
+        It uses synchronization mechanisms to ensure that the final image will
+        look the same
+        for every user, regardless of what their network latency/speed is – e.g.
+        if two user
+        draw at the same time on the same place, the server will decide which
+        line was the
         first one, and that will be reflected on every client.
     </p>
 </div>

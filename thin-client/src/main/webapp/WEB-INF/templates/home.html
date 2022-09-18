@@ -6,10 +6,12 @@
 </head>
 <body>
 <div class="container-col">
-    <form class="container-col border" data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}"
+    <form class="container-col border"
+          data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@LOGOUT}"
           method="post">
         <div class="container-row">
-            <input class="container-child button" data-th-value="#{logout.button}" id="logout" type="submit"
+            <input class="container-child button"
+                   data-th-value="#{logout.button}" id="logout" type="submit"
                    value="log out">
         </div>
     </form>
@@ -19,15 +21,19 @@
              data-th-if="not ${#vars.createdMeetings.isEmpty()}">
             <div class="container-col">
                 <h3 class="container-child"
-                    data-th-text="#{meetings.created.title}">Meetings you created (not yet expired)</h3>
+                    data-th-text="#{meetings.created.title}">Meetings you
+                    created (not yet expired)</h3>
                 <table class="container-child">
                     <thead>
                     <tr>
                         <td data-th-text="#{meetings.table.title}">TITLE</td>
                         <td data-th-text="#{meetings.table.date}">DATE</td>
                         <td data-th-text="#{meetings.table.time}">TIME</td>
-                        <td data-th-text="#{meetings.table.duration}">DURATION</td>
-                        <td data-th-text="#{meetings.table.max_participants}">MAX PARTICIPANTS</td>
+                        <td data-th-text="#{meetings.table.duration}">DURATION
+                        </td>
+                        <td data-th-text="#{meetings.table.max_participants}">
+                            MAX PARTICIPANTS
+                        </td>
                     </tr>
                     </thead>
                     <tbody data-th-remove="all-but-first">
@@ -36,16 +42,20 @@
                         <td data-th-text="${{meeting.date}}">DATE</td>
                         <td data-th-text="${{meeting.time}}">TIME</td>
                         <td data-th-text="${{meeting.duration}}">DURATION</td>
-                        <td data-th-text="${{meeting.maxParticipants}}">MAX PARTICIPANTS</td>
+                        <td data-th-text="${{meeting.maxParticipants}}">MAX
+                            PARTICIPANTS
+                        </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="split-half" data-th-if="not ${#vars.invitedMeetings.isEmpty()}">
+        <div class="split-half"
+             data-th-if="not ${#vars.invitedMeetings.isEmpty()}">
             <div class="container-col">
                 <h3 class="container-child"
-                    data-th-text="#{meetings.invited.title}">Meetings you were invited to (not yet expired)</h3>
+                    data-th-text="#{meetings.invited.title}">Meetings you were
+                    invited to (not yet expired)</h3>
                 <table class="container-child">
                     <thead>
                     <tr>
@@ -53,18 +63,24 @@
                         <td data-th-text="#{meetings.table.title}">TITLE</td>
                         <td data-th-text="#{meetings.table.date}">DATE</td>
                         <td data-th-text="#{meetings.table.time}">TIME</td>
-                        <td data-th-text="#{meetings.table.duration}">DURATION</td>
-                        <td data-th-text="#{meetings.table.max_participants}">MAX PARTICIPANTS</td>
+                        <td data-th-text="#{meetings.table.duration}">DURATION
+                        </td>
+                        <td data-th-text="#{meetings.table.max_participants}">
+                            MAX PARTICIPANTS
+                        </td>
                     </tr>
                     </thead>
                     <tbody data-th-remove="all-but-first">
                     <tr data-th-each="meeting : ${invitedMeetings}">
-                        <td data-th-text="${{meeting.admin.getUname()}}">ADMIN</td>
+                        <td data-th-text="${{meeting.admin.getUname()}}">ADMIN
+                        </td>
                         <td data-th-text="${{meeting.title}}">TITLE</td>
                         <td data-th-text="${{meeting.date}}">DATE</td>
                         <td data-th-text="${{meeting.time}}">TIME</td>
                         <td data-th-text="${{meeting.duration}}">DURATION</td>
-                        <td data-th-text="${{meeting.maxParticipants}}">MAX PARTICIPANTS</td>
+                        <td data-th-text="${{meeting.maxParticipants}}">MAX
+                            PARTICIPANTS
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -72,41 +88,55 @@
         </div>
     </div>
     <form class="container-col border"
-          data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@CREATE_MEETING}" method="post">
+          data-th-action="${@com.rampeo.tiw.progetto2022.Constants.URLs@CREATE_MEETING}"
+          method="post">
         <h3 class="container-child"
             data-th-text="#{creation.title}">Meeting creation</h3>
         <div class="container-row">
-            <label class="container-child split-half" data-th-text="#{creation.meeting.title}"
+            <label class="container-child split-half"
+                   data-th-text="#{creation.meeting.title}"
                    for="title">Title</label>
-            <input class="container-child split-half" data-th-placeholder="#{creation.meeting.title.placeholder}" id="title" name="title"
+            <input class="container-child split-half"
+                   data-th-placeholder="#{creation.meeting.title.placeholder}"
+                   id="title" name="title"
                    required
                    type="text">
         </div>
         <div class="container-row">
-            <label class="container-child split-half" data-th-text="#{creation.meeting.start}"
+            <label class="container-child split-half"
+                   data-th-text="#{creation.meeting.start}"
                    for="start">Meeting start date and time (GMT)</label>
-            <input class="container-child split-half" id="start" name="start" required type="datetime-local">
+            <input class="container-child split-half" id="start" name="start"
+                   required type="datetime-local">
         </div>
         <div class="container-row">
-            <label class="container-child split-half" data-th-text="#{creation.meeting.duration}"
+            <label class="container-child split-half"
+                   data-th-text="#{creation.meeting.duration}"
                    for="duration">Meeting continues for (in minutes)</label>
-            <input class="container-child split-half" data-th-placeholder="#{creation.meeting.duration.placeholder}" id="duration" name="duration"
+            <input class="container-child split-half"
+                   data-th-placeholder="#{creation.meeting.duration.placeholder}"
+                   id="duration" name="duration"
                    required
                    type="number">
         </div>
         <div class="container-row">
-            <label class="container-child split-half" data-th-text="#{creation.meeting.max_participants}"
+            <label class="container-child split-half"
+                   data-th-text="#{creation.meeting.max_participants}"
                    for="max_participants">Max number of participants</label>
-            <input class="container-child split-half" data-th-placeholder="#{creation.meeting.max_participants.placeholder}" id="max_participants"
+            <input class="container-child split-half"
+                   data-th-placeholder="#{creation.meeting.max_participants.placeholder}"
+                   id="max_participants"
                    name="max_participants"
                    required type="number">
         </div>
         <div class="container-row">
-            <input class="container-child button" data-th-value="#{creation.button}" id="create" type="submit"
+            <input class="container-child button"
+                   data-th-value="#{creation.button}" id="create" type="submit"
                    value="create">
         </div>
     </form>
-    <div class="container-col border" data-th-replace="~{errors :: error-handler}"></div>
+    <div class="container-col border"
+         data-th-replace="~{errors :: error-handler}"></div>
 </div>
 </body>
 </html>

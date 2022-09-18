@@ -23,10 +23,12 @@ limitations under the License.
 
     <jsp:declaration>
 
-          String getDateTimeStr(Locale l) {
-            DateFormat df = SimpleDateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, l);
-            return df.format(new Date());
-          }
+
+                  String getDateTimeStr(Locale l) {
+                    DateFormat df = SimpleDateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, l);
+                    return df.format(new Date());
+                  }
+
 
     </jsp:declaration>
 
@@ -42,15 +44,17 @@ limitations under the License.
     <div>Use a jsp:scriptlet to loop from 1 to 10:</div>
     <jsp:scriptlet>
 
-        // Note we need to declare CDATA because we don't escape the less than symbol
-        <![CDATA[
-          for (int i = 1; i<=10; i++) {
-            out.println(i);
-            if (i < 10) {
-              out.println(", ");
-            }
-          }
-        ]]>
+
+                // Note we need to declare CDATA because we don't escape the less than symbol
+                <![CDATA[
+                  for (int i = 1; i<=10; i++) {
+                    out.println(i);
+                    if (i < 10) {
+                      out.println(", ");
+                    }
+                  }
+                ]]>
+
 
     </jsp:scriptlet>
 

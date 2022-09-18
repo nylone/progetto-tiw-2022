@@ -45,7 +45,8 @@ public class DoRegister extends HttpServlet {
             } else {
                 response.setStatus(HttpServletResponse.SC_CONFLICT);
             }
-        } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
+        } catch (SQLException | NoSuchAlgorithmException |
+                 InvalidKeySpecException e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 

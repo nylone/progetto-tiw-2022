@@ -209,7 +209,8 @@
                 <xsl:value-of select="@virtualHost"/>
             </td>
             <td>
-                <xsl:value-of select="@method"/> <xsl:value-of select="@currentUri"/>?<xsl:value-of
+                <xsl:value-of select="@method"/> <xsl:value-of
+                    select="@currentUri"/>?<xsl:value-of
                     select="@currentQueryString"/>
                 <xsl:value-of select="@protocol"/>
             </td>

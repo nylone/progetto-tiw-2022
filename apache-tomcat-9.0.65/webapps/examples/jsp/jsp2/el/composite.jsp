@@ -42,7 +42,8 @@ concatenated, and the result is coerced to the expected type.
                 <td>\${'hello'} wo\${'rld'}</td>
                 <td>String</td>
                 <td>
-                    <jsp:setProperty name="values" property="stringValue" value="${'hello'} wo${'rld'}"/>
+                    <jsp:setProperty name="values" property="stringValue"
+                                     value="${'hello'} wo${'rld'}"/>
                     ${values.stringValue}</td>
             </tr>
             <tr>
@@ -54,7 +55,8 @@ concatenated, and the result is coerced to the expected type.
                 <td>\${1+2}.\${220}</td>
                 <td>Double</td>
                 <td>
-                    <jsp:setProperty name="values" property="doubleValue" value="${1+2}.${220}"/>
+                    <jsp:setProperty name="values" property="doubleValue"
+                                     value="${1+2}.${220}"/>
                     ${values.doubleValue}</td>
             </tr>
             <tr>
@@ -66,7 +68,8 @@ concatenated, and the result is coerced to the expected type.
                 <td>000\${1}\${7}</td>
                 <td>Long</td>
                 <td>
-                    <jsp:setProperty name="values" property="longValue" value="000${1}${7}"/>
+                    <jsp:setProperty name="values" property="longValue"
+                                     value="000${1}${7}"/>
                     ${values.longValue}</td>
             </tr>
             <tr>
@@ -89,13 +92,15 @@ concatenated, and the result is coerced to the expected type.
             <tr>
                 <td>\${undefinedFoo}hello world\${undefinedBar}</td>
                 <td>String</td>
-                <td><my:values string="${undefinedFoo}hello world${undefinedBar}"/></td>
+                <td><my:values
+                        string="${undefinedFoo}hello world${undefinedBar}"/></td>
             </tr>
             <tr>
                 <td>\${undefinedFoo}\${undefinedBar}</td>
                 <td>Double</td>
                 <td>
-                    <jsp:setProperty name="values" property="doubleValue" value="${undefinedFoo}${undefinedBar}"/>
+                    <jsp:setProperty name="values" property="doubleValue"
+                                     value="${undefinedFoo}${undefinedBar}"/>
                     ${values.doubleValue}</td>
             </tr>
             <tr>
@@ -107,7 +112,8 @@ concatenated, and the result is coerced to the expected type.
                 <td>\${undefinedFoo}\${undefinedBar}</td>
                 <td>Long</td>
                 <td>
-                    <jsp:setProperty name="values" property="longValue" value="${undefinedFoo}${undefinedBar}"/>
+                    <jsp:setProperty name="values" property="longValue"
+                                     value="${undefinedFoo}${undefinedBar}"/>
                     ${values.longValue}</td>
             </tr>
             <tr>

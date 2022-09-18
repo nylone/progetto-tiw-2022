@@ -41,18 +41,22 @@ create table if not exists meeting_invite
 
 create procedure assert_max_participants_constraint(in new_m_id bigint unsigned)
 begin
-    if (select count(*) from (select * from meeting_invite mi where new_m_id = mi.m_id) as `m*`)
+    if (select count(*)
+        from (select * from meeting_invite mi where new_m_id = mi.m_id) as `m*`)
         = (select max_participants from meeting where id = new_m_id)
     then
-        signal sqlstate '45000' set message_text = "invites for selected meeting exceed the maximum amount";
+        signal sqlstate '45000' set message_text =
+                "invites for selected meeting exceed the maximum amount";
     end if;
 end;
 
-create procedure assert_admin_invite_constraint(in new_m_id bigint unsigned, in new_u_id bigint unsigned)
+create procedure assert_admin_invite_constraint(in new_m_id bigint unsigned,
+                                                in new_u_id bigint unsigned)
 begin
     if (select admin from meeting m where m.id = new_m_id) = new_u_id
     then
-        signal sqlstate '45000' set message_text = "cannot invite an admin to its own meeting";
+        signal sqlstate '45000' set message_text =
+                "cannot invite an admin to its own meeting";
     end if;
 end;
 

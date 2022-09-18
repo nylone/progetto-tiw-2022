@@ -39,13 +39,17 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <head>
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
     <meta http-equiv="pragma" content="no-cache"/><!-- HTTP 1.0 -->
-    <meta http-equiv="cache-control" content="no-cache,must-revalidate"/><!-- HTTP 1.1 -->
-    <meta http-equiv="expires" content="0"/><!-- 0 is an invalid value and should be treated as 'now' -->
+    <meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="expires" content="0"/>
+    <!-- 0 is an invalid value and should be treated as 'now' -->
     <meta http-equiv="content-language" content="en"/>
     <meta name="author" content="Cedrik LIME"/>
-    <meta name="copyright" content="copyright 2005-2022 the Apache Software Foundation"/>
+    <meta name="copyright"
+          content="copyright 2005-2022 the Apache Software Foundation"/>
     <meta name="robots" content="noindex,nofollow,noarchive"/>
-    <title>Sessions Administration for <%= JspHelper.escapeXml(cn.getDisplayName()) %>
+    <title>Sessions Administration
+        for <%= JspHelper.escapeXml(cn.getDisplayName()) %>
     </title>
 </head>
 <body>
@@ -55,7 +59,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <p>Tips:</p>
 <ul>
     <li>Click on a column to sort.</li>
-    <li>To view a session details and/or remove a session attributes, click on its id.</li>
+    <li>To view a session details and/or remove a session attributes, click on
+        its id.
+    </li>
 </ul>
 
 <div class="error"><%= JspHelper.escapeXml(request.getAttribute("error")) %>
@@ -66,7 +72,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <form action="<%= submitUrl %>" method="post" id="sessionsForm">
     <fieldset>
         <legend>Active HttpSessions informations</legend>
-        <input type="hidden" name="action" id="sessionsFormAction" value="injectSessions"/>
+        <input type="hidden" name="action" id="sessionsFormAction"
+               value="injectSessions"/>
         <input type="hidden" name="sort" id="sessionsFormSort"
                value="<%= JspHelper.escapeXml(request.getAttribute("sort")) %>"/>
         <% String order = (String) request.getAttribute("order");
@@ -74,10 +81,13 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                 order = "ASC";
             }
         %>
-        <input type="hidden" name="order" id="sessionsFormSortOrder" value="<%= JspHelper.escapeXml(order) %>"/>
-        <input type="submit" name="refresh" id="refreshButton" value="Refresh Sessions list"
+        <input type="hidden" name="order" id="sessionsFormSortOrder"
+               value="<%= JspHelper.escapeXml(order) %>"/>
+        <input type="submit" name="refresh" id="refreshButton"
+               value="Refresh Sessions list"
                onclick="document.getElementById('sessionsFormAction').value='refreshSessions'; return true;"/>
-        <%= JspHelper.formatNumber(activeSessions.size()) %> active Sessions<br/>
+        <%= JspHelper.formatNumber(activeSessions.size()) %> active
+        Sessions<br/>
         <table border="1" cellpadding="2" cellspacing="2" width="100%">
             <thead>
             <tr>
@@ -161,7 +171,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                     }
             %>
             <tr>
-                <td><input type="checkbox" name="sessionIds" value="<%= currentSessionId %>"/>
+                <td><input type="checkbox" name="sessionIds"
+                           value="<%= currentSessionId %>"/>
                     <%
                         if ("Proxy".equals(type)) {
                             out.print(currentSessionId);
@@ -194,7 +205,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
             </tbody>
         </table>
         <p style="text-align: center;">
-            <input type="submit" name="invalidate" value="Invalidate selected Sessions"
+            <input type="submit" name="invalidate"
+                   value="Invalidate selected Sessions"
                    onclick="document.getElementById('sessionsFormAction').value='invalidateSessions'; return true;"/>
         </p>
     </fieldset>

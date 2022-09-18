@@ -62,7 +62,8 @@ available (not all illustrated here):
 <blockquote>
     <u><b>Change Parameter</b></u>
     <form action="implicit-objects.jsp" method="GET">
-        foo = <input type="text" name="foo" value="${fn:escapeXml(param["foo"])}">
+        foo = <input type="text" name="foo"
+                     value="${fn:escapeXml(param["foo"])}">
         <input type="submit">
     </form>
     <br>

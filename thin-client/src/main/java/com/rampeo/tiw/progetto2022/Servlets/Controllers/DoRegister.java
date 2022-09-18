@@ -66,7 +66,8 @@ public class DoRegister extends ThymeleafHTTPServlet {
                         .addParam(AttributeNames.ERROR, ErrorParameter.AUTH_USER_EXISTS)
                         .toString());
             }
-        } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
+        } catch (SQLException | NoSuchAlgorithmException |
+                 InvalidKeySpecException e) {
             response.sendRedirect(new PathBuilder(URLs.AUTH_PAGE)
                     .addParam(AttributeNames.ERROR, ErrorParameter.UNKNOWN)
                     .toString());

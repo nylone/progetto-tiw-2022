@@ -26,7 +26,8 @@
         <%@ include file="foo.jsp" %>
 
     <p>
-        <jsp:include page="foo.html" flush="true"/> by including the output of another JSP:
+        <jsp:include page="foo.html" flush="true"/> by including the output of
+        another JSP:
         <jsp:include page="foo.jsp" flush="true"/>
         :-)
 

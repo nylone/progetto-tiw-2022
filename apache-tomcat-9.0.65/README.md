@@ -19,7 +19,8 @@ project. To learn more about getting involved,
 Apache Tomcat software powers numerous large-scale, mission-critical web
 applications across a diverse range of industries and organizations. Some of
 these users and their stories are listed on the
-[PoweredBy wiki page](https://cwiki.apache.org/confluence/display/TOMCAT/PoweredBy).
+[PoweredBy wiki page](https://cwiki.apache.org/confluence/display/TOMCAT/PoweredBy)
+.
 
 Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache Tomcat
 project logo are trademarks of the Apache Software Foundation.
@@ -61,7 +62,8 @@ Please see [LICENSE](LICENSE) for more info.
 ### Support and Mailing List Information
 
 * Free community support is available through the
-  [tomcat-users](https://tomcat.apache.org/lists.html#tomcat-users) email list and
+  [tomcat-users](https://tomcat.apache.org/lists.html#tomcat-users) email list
+  and
   a dedicated [IRC channel](https://tomcat.apache.org/irc.html) (#tomcat on
   Freenode).
 

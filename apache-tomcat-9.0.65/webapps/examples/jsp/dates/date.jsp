@@ -19,7 +19,8 @@
 <%@ page session="false" %>
 
 <body bgcolor="white">
-<jsp:useBean id='clock' scope='page' class='dates.JspCalendar' type="dates.JspCalendar"/>
+<jsp:useBean id='clock' scope='page' class='dates.JspCalendar'
+             type="dates.JspCalendar"/>
 
 <font size=4>
     <ul>

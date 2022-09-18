@@ -26,8 +26,10 @@ public class GetMeetings extends HttpServlet {
         List<MeetingBean> meetings;
         try (MeetingDAO meetingDAO = new MeetingDAO()) {
             switch (request.getParameter("type").trim().toLowerCase()) {
-                case "created" -> meetings = meetingDAO.getCreatedMeetings(user);
-                case "invited" -> meetings = meetingDAO.getInvitedMeetings(user);
+                case "created" ->
+                        meetings = meetingDAO.getCreatedMeetings(user);
+                case "invited" ->
+                        meetings = meetingDAO.getInvitedMeetings(user);
                 default -> {
                     response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                     return;

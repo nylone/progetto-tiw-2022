@@ -32,7 +32,8 @@
 
     <servlet>
         <servlet-name>Manager</servlet-name>
-        <servlet-class>org.apache.catalina.manager.ManagerServlet</servlet-class>
+        <servlet-class>org.apache.catalina.manager.ManagerServlet
+        </servlet-class>
         <init-param>
             <param-name>debug</param-name>
             <param-value>2</param-value>
@@ -40,7 +41,8 @@
     </servlet>
     <servlet>
         <servlet-name>HTMLManager</servlet-name>
-        <servlet-class>org.apache.catalina.manager.HTMLManagerServlet</servlet-class>
+        <servlet-class>org.apache.catalina.manager.HTMLManagerServlet
+        </servlet-class>
         <init-param>
             <param-name>debug</param-name>
             <param-value>2</param-value>
@@ -61,7 +63,8 @@
     </servlet>
     <servlet>
         <servlet-name>Status</servlet-name>
-        <servlet-class>org.apache.catalina.manager.StatusManagerServlet</servlet-class>
+        <servlet-class>org.apache.catalina.manager.StatusManagerServlet
+        </servlet-class>
         <init-param>
             <param-name>debug</param-name>
             <param-value>0</param-value>
@@ -70,7 +73,8 @@
 
     <servlet>
         <servlet-name>JMXProxy</servlet-name>
-        <servlet-class>org.apache.catalina.manager.JMXProxyServlet</servlet-class>
+        <servlet-class>org.apache.catalina.manager.JMXProxyServlet
+        </servlet-class>
     </servlet>
 
     <!-- Define the Manager Servlet Mapping -->
@@ -93,7 +97,8 @@
 
     <filter>
         <filter-name>CSRF</filter-name>
-        <filter-class>org.apache.catalina.filters.CsrfPreventionFilter</filter-class>
+        <filter-class>org.apache.catalina.filters.CsrfPreventionFilter
+        </filter-class>
         <init-param>
             <param-name>entryPoints</param-name>
             <param-value>/html,/html/,/html/list,/index.jsp</param-value>
@@ -105,7 +110,8 @@
     <!-- X-XSS-Protection as they are page specific.                           -->
     <filter>
         <filter-name>HTTP header security filter</filter-name>
-        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter
+        </filter-class>
         <init-param>
             <param-name>hstsEnabled</param-name>
             <param-value>false</param-value>
@@ -126,7 +132,8 @@
     <!-- NOTE:  None of these roles are present in the default users file -->
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>HTML Manager interface (for humans)</web-resource-name>
+            <web-resource-name>HTML Manager interface (for humans)
+            </web-resource-name>
             <url-pattern>/html/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
@@ -135,7 +142,8 @@
     </security-constraint>
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Text Manager interface (for scripts)</web-resource-name>
+            <web-resource-name>Text Manager interface (for scripts)
+            </web-resource-name>
             <url-pattern>/text/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
